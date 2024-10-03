@@ -12,7 +12,27 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        flipx: {
+          "0%" :{
+            transform: "rotateX(-180deg)"
+          },
+          "50%": {
+            transform: "rotateX(-90deg)",
+          },
+          "100%" :{
+            transform: "rotateX(0deg)"
+          },
+        },
+      },
+      animation: {
+        flipx : 'flipx 2s 0.25s 1',
+      }
     },
+    fontFamily: {
+			LilitaOne: ["Lilita One, cursive"],
+      Rowdies: ['"Rowdies"', 'cursive'],
+		},
   },
   plugins: [],
 };
