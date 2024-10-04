@@ -8,6 +8,10 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Lilita+One&display=swap'
           rel="stylesheet"
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'
+          rel="stylesheet"
+        />
         <body className="antialiased">
           <Main />
           <NextScript />

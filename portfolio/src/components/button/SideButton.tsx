@@ -1,25 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { setCurrentPage } from '@/feature/button/SideButtonSlice';
+import { useRouter } from 'next/router';
 
-const pageLabels = ['PORTFOLIO.', 'INTRODUCTION.', 'PROJECT.', 'ETC.'];
+const pageLabels = ['PORTFOLIO.', 'INTRODUCTION.', 'PROJECT.'];
+const pageRoutes = ['/', '/introduction', '/project'];
 
 export default function SideButtons() {
-  const dispatch = useDispatch();
-  const currentPage = useSelector((state: RootState) => state.button.currentPage);
-  const [hovered, setHovered] = useState(false);
-  const [animationClass, setAnimationClass] = useState('');
+    const router = useRouter();
+    const dispatch = useDispatch();
+    const currentPage = useSelector((state: RootState) => state.button.currentPage);
+    const [hovered, setHovered] = useState(false);
+    const [animationClass, setAnimationClass] = useState('');
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-    setAnimationClass('animate__fadeIn');
-  };
+    const saveScrollPosition = () => {
+        sessionStorage.setItem('scrollPosition', JSON.stringify(window.scrollY));
+    };
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-    setAnimationClass('animate__fadeOut');
-  };
+    const restoreScrollPosition = () => {
+        const savedPosition = sessionStorage.getItem('scrollPosition');
+        if (savedPosition) {
+            window.scrollTo(0, JSON.parse(savedPosition));
+        }
+    };
+
+    const saveCurrentPage = (index: number) => {
+        sessionStorage.setItem('currentPage', JSON.stringify(index));
+    };
+
+    const restoreCurrentPage = () => {
+        const savedPage = sessionStorage.getItem('currentPage');
+        if (savedPage) {
+            dispatch(setCurrentPage(JSON.parse(savedPage)));
+        }
+    };
+
+    useEffect(() => {
+        restoreScrollPosition();
+        restoreCurrentPage();
+    }, []);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+        setAnimationClass('animate__fadeIn');
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+        setAnimationClass('animate__fadeOut');
+    };
+
+    const handleButtonClick = (index: number) => {
+        saveScrollPosition();
+        saveCurrentPage(index);
+        dispatch(setCurrentPage(index));
+        router.push(pageRoutes[index]);
+    };
 
   return (
     <div
@@ -33,7 +70,7 @@ export default function SideButtons() {
       {pageLabels.map((label, index) => (
         <div key={index} className="relative my-3">
             <button
-                onClick={() => dispatch(setCurrentPage(index))}
+                onClick={() => handleButtonClick(index)}
                 className={`relative transform rotate-45 ${
                     currentPage === index ? 'bg-gray-800 w-4 h-4' : 'border border-black w-2 h-2'
                 } transition-all duration-300 ease-in-out`}
@@ -52,7 +89,7 @@ export default function SideButtons() {
                     transform: 'translate(-50%, -50%)',
                     zIndex: 0,
                 }}
-                onClick={() => dispatch(setCurrentPage(index))}
+                onClick={() => handleButtonClick(index)}
             ></div>
             <div
                 className={`absolute right-0 mr-8 top-1/2 transform -translate-y-1/2 text-lg font-bold animate__animated ${animationClass}`}

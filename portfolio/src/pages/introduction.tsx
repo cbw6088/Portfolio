@@ -78,14 +78,18 @@ export default function introduction() {
                 <div className="text-lg text-center mt-4">
                     <div className="grid grid-cols-2 gap-x-8">
                         <div className="text-left">
+                            2011.02 - 2014.02 졸업
+                        </div>
+                        <div className="text-left">
+                            <span className="font-bold">성동공업고등학교</span> 컴퓨터응용기계경영과
+                        </div>
+                        <div className="text-left">
                             2017.02 - 2019.02 졸업
                         </div>
                         <div className="text-left">
                             <span className="font-bold">호서직업전문학교</span> 실내디자인과
                         </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-x-8 mt-2">
-                        <div className="text-right">
+                        <div className="text-left">
                             2022.02 - 2025.02 졸업예정
                         </div>
                         <div className="text-left">
@@ -132,6 +136,9 @@ export default function introduction() {
                         </div>
                     </div>
                 </div>
+                <button onClick={() => handleScrollToSection(0)} className="mt-8 text-gray-800 font-LilitaOne tracking-wider text-2xl px-8 py-2">
+                    BACK
+                </button>
             </section>
             <SideButtons />
         </div>

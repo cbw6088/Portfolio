@@ -30,9 +30,10 @@ const config: Config = {
       }
     },
     fontFamily: {
-			LilitaOne: ["Lilita One, cursive"],
-      Rowdies: ['"Rowdies"', 'cursive'],
-		},
+		LilitaOne: ["Lilita One, cursive"],
+        Rowdies: ['"Rowdies"', 'cursive'],
+        BlackHanSans: ["Black Han Sans, cursive"],
+	},
   },
   plugins: [],
 };
