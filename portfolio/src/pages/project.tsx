@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from 'next/image';
-import { useDispatch } from "react-redux";
 import SideButtons from "@/components/button/SideButton";
-import { useLocation, Link } from "react-router-dom";
 import Git from "../styles/icon/git.png";
 import Web from "../styles/icon/web.png";
 import quizgen from "../styles/images/quizgen.png";

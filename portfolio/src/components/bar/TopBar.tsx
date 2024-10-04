@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 const TopBar = () => {
-    const dispatch = useDispatch();
     const { isVisible, barType } = useSelector((state: RootState) => state.bar);
     if (!isVisible || !barType) return null;
 

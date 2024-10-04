@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from 'next/image';
-import { useDispatch } from "react-redux";
 import SideButtons from "@/components/button/SideButton";
-import { useLocation, Link } from "react-router-dom";
 import MyImage from "../styles/images/me.png";
 import Phone from "../styles/icon/phone.png";
 import Mail from "../styles/icon/mail.png";
