@@ -24,9 +24,14 @@ const config: Config = {
             transform: "rotateX(0deg)"
           },
         },
+        fadeIn: {
+            '0%': { opacity: "0" },
+            '100%': { opacity: "1" },
+          },
       },
       animation: {
         flipx : 'flipx 2s 0.25s 1',
+        fadeIn: 'fadeIn 1s ease-in forwards',
       }
     },
     fontFamily: {

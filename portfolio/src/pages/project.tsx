@@ -21,7 +21,7 @@ export default function project() {
     };
 
     return(
-        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory">
+        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
             {/* 첫 번째 섹션 */}
             <section className="h-screen grid grid-cols-2 snap-start mx-12">
                 <div className="flex justify-center items-center bg-gray-100">
@@ -39,7 +39,7 @@ export default function project() {
                         <div className="text-lg text-gray-500 mt-4">
                             2024.08 - 2024.09
                         </div>
-                        <div className="text-lg text-gray-800 text-center mt-8 font-bold">
+                        <div className="text-lg text-gray-800 text-center mt-8 font-BlackHanSans">
                             PDF파일을 업로드하고 간편하게 나만의 문제지를 만들어<br/>퀴즈를 풀어볼 수 있는 웹사이트
                         </div>
                         <button onClick={() => handleScrollToSection(1)} className="text-lg text-white bg-gray-800 px-2 mt-10">
@@ -62,7 +62,7 @@ export default function project() {
                         <div className="text-lg text-gray-500 mt-8">
                             2024.03 - 2024.06
                         </div>
-                        <div className="text-lg text-gray-800 text-center mt-10 font-bold">
+                        <div className="text-lg text-gray-800 text-center mt-10 font-BlackHanSans">
                             최종 목표와 세부 목표를 나누어 한 단계 씩 해결하고<br/> 그에 맞는 피드백을 받으며 성장하는 어플리케이션
                         </div>
                         <button onClick={() => handleScrollToSection(3)} className="text-lg text-white bg-gray-800 px-2 mt-10">
@@ -391,13 +391,15 @@ export default function project() {
                 </div>
             </section>
             {/* 여섯 번째 섹션 */}
-            <section className="h-screen snap-start mx-12 flex items-center justify-center">
-                <div className="flex flex-col font-LilitaOne tracking-wider">
-                    <div className="text-[7rem] text-gray-800">
-                        ETC.
+            <section className="h-screen snap-start flex items-center justify-center">
+                <div className="flex flex-col items-center justify-between font-LilitaOne tracking-wider h-full">
+                    <div className="flex-grow flex items-center justify-center">
+                        <div className="text-[7rem] text-gray-800">
+                            ETC.
+                        </div>
                     </div>
-                    <button onClick={() => handleScrollToSection(6)} className="text-lg text-white bg-gray-800 px-2 mt-10">
-                        VIEW
+                    <button onClick={() => handleScrollToSection(6)} className="w-20 text-lg text-white bg-gray-800 mb-12">
+                        NEXT
                     </button>
                 </div>
             </section>
@@ -490,7 +492,7 @@ export default function project() {
                 <div className="flex justify-center items-center">
                     <div className="w-full flex justify-center font-LilitaOne tracking-wider">
                         <div className="flex flex-col items-start w-[70%]">
-                            <div className="text-[5rem] text-pink-500">
+                            <div className="text-[4rem] text-pink-500">
                                 NicknameGenerator.
                             </div>
                             <div className="text-lg text-gray-800 font-BlackHanSans mb-10">

@@ -16,7 +16,7 @@ export default function introduction() {
     };
 
     return (
-        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory">
+        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
             {/* 첫 번째 섹션 */}
             <section className="h-screen flex flex-col justify-center items-center snap-start">
                 <div className="flex flex-col items-center">

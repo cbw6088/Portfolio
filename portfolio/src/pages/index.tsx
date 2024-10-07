@@ -10,7 +10,7 @@ export default function Home() {
     };
 
     return (
-        <div className="w-screen h-screen flex justify-center bg-gray-100">
+        <div className="w-screen h-screen flex justify-center bg-gray-100 animate-fadeIn">
             <div className="w-full h-full flex flex-col justify-start">
                 <div 
                     className="w-36 h-32 border-t-2 border-l-2 border-gray-200 mx-10 my-10" 
