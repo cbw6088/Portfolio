@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SideButtons from "@/components/button/SideButton";
 import TopBar from "@/components/bar/TopBar";
 import { useRouter } from "next/router";
@@ -10,9 +10,22 @@ export default function Home() {
     const router = useRouter();
     const dispatch = useDispatch();
 
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
     useEffect(() => {
         console.log("showBar('Home') 호출");
-        dispatch(showBar('Home'));  // barType을 'Home'으로 설정
+        dispatch(showBar('Home'));
+
+        const handleMouseMove = (e: MouseEvent) => {
+            setCursorPosition({ x: e.clientX, y: e.clientY });
+        };
+
+        // 마우스 이동 시 커서 위치 업데이트
+        document.addEventListener('mousemove', handleMouseMove);
+        
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
     }, [dispatch]);
     
     const handleProjectPageClick = () => {
@@ -22,6 +35,25 @@ export default function Home() {
 
     return (
         <div className="w-screen h-screen flex justify-center bg-gray-100 animate-fadeIn">
+            {/* 마우스 커서 */}
+            <div 
+                id="cursor-dot" 
+                className="absolute w-cursor h-cursor bg-orange-600 rounded-full transition-transform duration-150 ease-in-out pointer-events-none"
+                style={{
+                    left: `${cursorPosition.x}px`,
+                    top: `${cursorPosition.y}px`,
+                    transform: "translate(-50%, -50%)",
+                }}
+            />
+            <div 
+                id="cursor-dot-outline" 
+                className="absolute w-cursor-outline h-cursor-outline border border-red-500/30 rounded-full transition-transform duration-150 ease-in-out pointer-events-none"
+                style={{
+                    left: `${cursorPosition.x}px`,
+                    top: `${cursorPosition.y}px`,
+                    transform: "translate(-50%, -50%)",
+                }}
+            />
             <div className="w-full h-full flex flex-col justify-start">
                 {/* 상단 박스 */}
                 <div 
