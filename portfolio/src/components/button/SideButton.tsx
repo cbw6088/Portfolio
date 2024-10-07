@@ -60,7 +60,7 @@ export default function SideButtons() {
 
   return (
     <div
-        className="flex flex-col justify-center items-center mr-12 mb-12 fixed right-0 top-[45%] transform -translate-y-1/2" // 위치 고정
+        className="flex flex-col justify-center items-center mr-12 mb-12 fixed right-0 top-[45%] transform -translate-y-1/2" 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{
@@ -68,11 +68,11 @@ export default function SideButtons() {
         }}
     >
       {pageLabels.map((label, index) => (
-        <div key={index} className="relative my-3">
+        <div key={index} className="hidden md:block relative my-3">
             <button
                 onClick={() => handleButtonClick(index)}
                 className={`relative transform rotate-45 ${
-                    currentPage === index ? 'bg-gray-800 w-4 h-4' : 'border border-black w-2 h-2'
+                    currentPage === index ? 'bg-gray-800 w-3.5 h-3.5' : 'border border-black w-2 h-2'
                 } transition-all duration-300 ease-in-out`}
                 style={{
                     position: 'relative',

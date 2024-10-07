@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface BarState {
     isVisible: boolean;
-    barType: 'Home' | null;
+    barType: 'Home' | 'Introduction' | 'Project' | null;
 }
 
 const initialState: BarState = {
-    isVisible: false,
+    isVisible: true,
     barType: null,
 };
 
