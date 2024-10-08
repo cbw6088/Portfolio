@@ -41,6 +41,13 @@ export default function SideButtons() {
         restoreCurrentPage();
     }, []);
 
+    useEffect(() => {
+        const currentRouteIndex = pageRoutes.indexOf(router.pathname);
+        if (currentRouteIndex !== -1) {
+            dispatch(setCurrentPage(currentRouteIndex));
+        }
+    }, [router.pathname, dispatch]);
+
     const handleMouseEnter = () => {
         setHovered(true);
         setAnimationClass('animate__fadeIn');

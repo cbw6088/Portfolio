@@ -118,7 +118,7 @@ export default function Project() {
                             <div className="text-[2rem] md:text-[5rem] text-blue-600 mt-6 md:mt-0">
                                 QuizGen.
                             </div>
-                            <div className="text-sm md:text-lg text-gray-800 font-BlackHanSans mb-0 md:mb-10">
+                            <div className="text-sm md:text-lg text-gray-800 font-BlackHanSans mb-0 lg:mb-10">
                                 PDF를 퀴즈로 만들어주는 웹서비스
                             </div>
                             <div className="block md:hidden flex flex-col justify-center items-center">
@@ -168,69 +168,69 @@ export default function Project() {
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2 mt-4">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     기간:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     2024.08 - 2024.09 (약 6주)
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-12 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-12 md:w-28">
                                     플랫폿:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Web
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     인원:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
-                                    4명(FE 2명, BE 2명)
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
+                                    FE 2명, BE 2명
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     역할:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     Front-End(팀장, Web UI/UX Design)
                                 </div>
                             </div>
-                            <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans my-2 md:my-8">
+                            <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans md:my-8">
                                 개발환경
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     언어:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     TypeScript
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     프레임워크:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     React, SpringBoot
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-bold w-16 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-bold w-16 md:w-28">
                                     DevOps:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Docker, AWS EC2
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-bold w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-bold w-18 md:w-28">
                                     ETC:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Github, Figma, Vite, Langchain, Rest API
                                 </div>
                             </div>
@@ -259,7 +259,7 @@ export default function Project() {
                                 href="https://quizgen.site/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-LilitaOne tracking-wider text-lg text-gray-800 ml-2"
+                                className="font-LilitaOne tracking-wider text-md text-gray-800 ml-2"
                             >
                                 https://quizgen.site/
                             </a>
@@ -276,7 +276,7 @@ export default function Project() {
                                 href="https://github.com/August-ToyProject/PDF-Quiz"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-LilitaOne tracking-wider text-lg text-gray-800 ml-2"
+                                className="font-LilitaOne tracking-wider text-md text-gray-800 ml-2"
                             >
                                 https://github.com/August-ToyProject/PDF-Quiz
                             </a>
@@ -296,7 +296,7 @@ export default function Project() {
                                 문제 전송 시간 94% 단축 및 UI/UX 개선
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm lg:text-lg text-gray-600 font-BlackHanSans">
                                 이 프로젝트는 사용자가 본인의 PDF 파일을 바탕으로 문제를 생성하고<br/>
                                 풀 수 있는 서비스로, 이용자 경험 최적화가 핵심 과제였습니다.<br/>
                                 초기에는 UI/UX 미흡과 데이터 전송 속도 문제로 어려움이 많았습니다.<br/>
@@ -366,34 +366,34 @@ export default function Project() {
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2 mt-4 md:mt-0">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     기간:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     2024.04 - 2024.06 (약 10주)
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-12 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-12 md:w-28">
                                     플랫폿:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     App
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     인원:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
-                                    4명(FE 1명, BE 2명, AI 1명)
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
+                                    FE 1명, BE 2명, AI 1명
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     역할:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     Front-End(팀장, App UI/UX Design)
                                 </div>
                             </div>
@@ -401,26 +401,26 @@ export default function Project() {
                                 개발환경
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     언어:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Kotlin
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     프레임워크:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Jetpack
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-bold w-18  md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-bold w-18  md:w-28">
                                     ETC:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Github, Figma, Rest API
                                 </div>
                             </div>
@@ -449,7 +449,7 @@ export default function Project() {
                             href="https://github.com/GOALDIARY/GOALDIARY"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden md:block font-LilitaOne tracking-wider text-lg text-gray-800 ml-2"
+                            className="hidden md:block font-LilitaOne tracking-wider text-md text-gray-800 ml-2"
                         >
                             https://github.com/GOALDIARY/GOALDIARY
                         </a>
@@ -468,7 +468,7 @@ export default function Project() {
                                 팀장과 프론트엔드 개발자로서의 역할
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm lg:text-lg text-gray-600 font-BlackHanSans">
                                     프로젝트를 진행할 때 팀원들 모두 처음 협업하는 상황이었기에,<br/>
                                     문제 발생 시 즉각 공유하는 소통 규칙을 도입하여 협업 효율성을 높였습니다.<br/><br/>
                                     
@@ -537,34 +537,34 @@ export default function Project() {
                                 />
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     기간:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     2024.08 - (진행중)
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-12 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-12 md:w-28">
                                     플랫폿:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Web
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-22 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-22 md:w-28">
                                     인원:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     FE 2명, BE 5명, 기획 2명, 디자인 4명
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     역할:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Front-End(Web UI/UX Design)
                                 </div>
                             </div>
@@ -572,26 +572,26 @@ export default function Project() {
                                 개발환경
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     언어:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     TypeScript
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-24 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-24 md:w-28">
                                     프레임워크:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     React, ReactNative, Next.js, StringBoot
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 w-18 md:w-28">
                                     ETC:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Github, Figma, ReduxToolkit, Rest API, WBS
                                 </div>
                             </div>
@@ -631,34 +631,34 @@ export default function Project() {
                                 />
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     기간:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     2024.07 - 2024.07 (2주)
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-12 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-12 md:w-28">
                                     플랫폿:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Web
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
                                     인원:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
                                     FE 1명, AI 1명
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-12 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-12 md:w-28">
                                     역할:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Front-End(UI/UX Design)
                                 </div>
                             </div>
@@ -666,34 +666,34 @@ export default function Project() {
                                 개발환경
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-BlackHanSans w-10 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-10 md:w-28">
                                     언어:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     TypeScript
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 w-18 md:w-28 font-BlackHanSans">
+                                <div className="text-sm md:text-lg text-gray-600 w-18 md:w-28 font-BlackHanSans">
                                     프레임워크:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     React
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-bold w-14 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-bold w-14 md:w-28">
                                     DevOps:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Docker, AWS EC2
                                 </div>
                             </div>
                             <div className="flex flex-row mb-2">
-                                <div className="text-sm md:text-md text-gray-600 font-bold w-8 md:w-28">
+                                <div className="text-sm md:text-lg text-gray-600 font-bold w-8 md:w-28">
                                     ETC:
                                 </div>
-                                <div className="text-sm md:text-md text-gray-600">
+                                <div className="text-sm md:text-lg text-gray-600">
                                     Github, Figma, Vite, Rest API
                                 </div>
                             </div>

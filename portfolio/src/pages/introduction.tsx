@@ -57,7 +57,7 @@ export default function Introduction() {
             />
             {/* 첫 번째 섹션 */}
             <section className="h-screen flex flex-col justify-center items-center snap-start">
-                <div className="flex flex-col items-center mt-8 md:mt-0">
+                <div className="flex flex-col items-center mt-12 md:mt-0">
                     <Image
                         className="w-36 h-36 md:w-64 md:h-64"
                         src={MyImage}
@@ -75,13 +75,13 @@ export default function Introduction() {
                             <div className="flex justify-center my-4 text-md md:text-lg lg:text-4xl text-gray-800 font-LilitaOne tracking-wider">
                                 INTRODUCTION.
                             </div>
-                            <div className="hidden md:block text-center text-sm lg:text-lg">
+                            <div className="hidden md:block text-center text-sm lg:text-lg dark:text-gray-800">
                                 성능 최적화에 강점을 가진 React와 TypeScript 기반의 프론트엔드 개발자입니다.<br/>
                                 사용자 경험(UX)을 최우선으로 고려한 UI 구현에 열정을 가지고 있으며, 성능 개선을 통해 웹 애플리케이션의 최적화를 추구합니다.<br/>
                                 협업을 통해 문제를 해결하고, 효율적인 코드 리뷰와 소통을 중시합니다.<br/>
                                 회사에서 사용하는 기술을 빠르고 정확하게 학습해 실무에 적용함으로써 프로젝트에 기여하겠습니다.
                             </div>
-                            <div className="block md:hidden text-center text-sm lg:text-lg">
+                            <div className="block md:hidden text-center text-sm lg:text-lg dark:text-gray-800">
                                 성능 최적화에 강점을 가진<br/> 
                                 React와 TypeScript 기반의 프론트엔드 개발자입니다.<br/>
                                 사용자 경험(UX)을 최우선으로 고려한<br/>
@@ -129,7 +129,7 @@ export default function Introduction() {
                     EDUCATION.
                 </div>
                 <div className="text-sm md:text-lg text-center mt-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 dark:text-gray-800">
                         <div className="text-center md:text-left">
                             2011.02 - 2014.02 졸업
                         </div>
@@ -153,7 +153,7 @@ export default function Introduction() {
                 <div className="text-md md:text-lg lg:text-4xl text-gray-800 font-LilitaOne tracking-wider mt-8 md:mt-24">
                     EXPERIENCES.
                 </div>
-                <div className="text-sm lg:text-lg text-center mt-4">
+                <div className="text-sm lg:text-lg text-center mt-4 dark:text-gray-800">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
                         <div className="text-center md:text-left">
                             2023.01 - 2023.02 수료
