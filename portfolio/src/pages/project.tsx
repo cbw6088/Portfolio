@@ -615,7 +615,7 @@ export default function Project() {
                 <div className="flex justify-center items-center">
                     <div className="w-full flex justify-center font-LilitaOne tracking-wider">
                         <div className="flex flex-col items-center md:items-start w-[100%] md:w-[70%]">
-                            <div className="text-[2rem] md:text-[4rem] text-blue-500 mt-8 md:mt-0">
+                            <div className="text-[2rem] md:text-[4rem] text-pink-500 mt-8 md:mt-0">
                                 NicknameGenerator.
                             </div>
                             <div className="text-sm md:text-lg text-gray-800 font-BlackHanSans mb-2 md:mb-10">
