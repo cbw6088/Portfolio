@@ -49,6 +49,7 @@ export default function Project() {
                     left: `${cursorPosition.x}px`,
                     top: `${cursorPosition.y}px`,
                     transform: "translate(-50%, -50%)",
+                    willChange: "transform",
                 }}
             />
             <div 
@@ -58,6 +59,7 @@ export default function Project() {
                     left: `${cursorPosition.x}px`,
                     top: `${cursorPosition.y}px`,
                     transform: "translate(-50%, -50%)",
+                    willChange: "transform",
                 }}
             />
             {/* 첫 번째 섹션 */}
@@ -73,6 +75,8 @@ export default function Project() {
                             layout="intrinsic"
                             width={500}
                             height={500} 
+                            placeholder="blur"
+                            priority
                         />
                         <div className="hidden lg:block text-lg text-gray-500 mt-4">
                             2024.08 - 2024.09
@@ -97,6 +101,8 @@ export default function Project() {
                             layout="intrinsic"
                             width={600}
                             height={600} 
+                            placeholder="blur"
+                            priority
                         />
                         <div className="hidden lg:block text-lg text-gray-500 mt-2 md:mt-8 lg:mt-4 xl:mt-0">
                             2024.03 - 2024.06
@@ -129,6 +135,8 @@ export default function Project() {
                                     layout="intrinsic"
                                     width={600}
                                     height={600} 
+                                    placeholder="blur"
+                                    priority
                                 />
                                 <div className="flex flex-col justify-center">
                                     <div className="w-full flex flex-row justify-center mb-2">
@@ -138,6 +146,8 @@ export default function Project() {
                                             layout="intrinsic"
                                             width={20}
                                             height={20} 
+                                            placeholder="blur"
+                                            priority
                                         />
                                         <a
                                             href="https://quizgen.site/"
@@ -155,6 +165,8 @@ export default function Project() {
                                             layout="intrinsic"
                                             width={20}
                                             height={20} 
+                                            placeholder="blur"
+                                            priority
                                         />
                                         <a
                                             href="https://github.com/August-ToyProject/PDF-Quiz"
@@ -245,6 +257,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                     <div className="hidden md:block flex flex-col justify-center">
                         <div className="w-full flex flex-row justify-start mb-4">
@@ -254,6 +268,8 @@ export default function Project() {
                                 layout="intrinsic"
                                 width={25}
                                 height={25} 
+                                placeholder="blur"
+                                priority
                             />
                             <a
                                 href="https://quizgen.site/"
@@ -271,6 +287,8 @@ export default function Project() {
                                 layout="intrinsic"
                                 width={25}
                                 height={25} 
+                                placeholder="blur"
+                                priority
                             />
                             <a
                                 href="https://github.com/August-ToyProject/PDF-Quiz"
@@ -326,6 +344,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                 </div>
             </section>
@@ -348,6 +368,8 @@ export default function Project() {
                                     layout="intrinsic"
                                     width={600}
                                     height={600} 
+                                    placeholder="blur"
+                                    priority
                                 />
                                 <div className="w-full flex flex-row justify-center">
                                     <Image
@@ -355,7 +377,9 @@ export default function Project() {
                                         alt="GitLogo"
                                         layout="intrinsic"
                                         width={20}
-                                        height={20} 
+                                        height={20}
+                                        placeholder="blur"
+                                        priority 
                                     />
                                     <a
                                         href="https://github.com/GOALDIARY/GOALDIARY"
@@ -437,6 +461,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                     <div className="w-full flex flex-row justify-center">
                         <Image
@@ -446,6 +472,8 @@ export default function Project() {
                             width={25}
                             height={25} 
                             className="hidden md:block"
+                            placeholder="blur"
+                            priority
                         />
                         <a
                             href="https://github.com/GOALDIARY/GOALDIARY"
@@ -479,14 +507,15 @@ export default function Project() {
                                     특히 직관적인 사용자 경험을 고려하며<br/>
                                     앱의 주요 기능을 안정적으로 완성했습니다.<br/><br/>
 
-                                    다만 개발 기간이 촉박해 성능보다는 기능 구현에 집중하게 되었습니다.<br/>
-                                    그 결과 UI/UX에 대한 세밀한 고려가 부족했던 점이 아쉬웠습니다.<br/>
-                                    이를 통해 초기 설계 단계에서부터 사용자 경험을 충분히 반영해야<br/>
-                                    한다는 교훈을 얻었고, 다음 프로젝트에서는 이를 보완하고자 합니다.<br/><br/>
+                                    다만 개발 기간이 촉박해 성능보다는 기능 구현에 집중하게 <br/>
+                                    되었습니다. 그 결과 UI/UX에 대한 세밀한 고려가 부족했던<br/>
+                                    점이 아쉬웠습니다. 이를 통해 초기 설계 단계에서부터<br/>
+                                    사용자 경험을 충분히 반영해야 한다는 교훈을 얻었고,<br/>
+                                    다음 프로젝트에서는 이를 보완하고자 합니다.<br/><br/>
 
-                                    이번 프로젝트는 협업과 소통, 그리고 효율적인 일정 관리의 중요성을<br/>
-                                    깨닫는 좋은 기회가 되었으며, 프론트엔드 개발자로서의<br/>
-                                    역량을 한층 더 성장시킬 수 있었습니다.
+                                    이번 프로젝트는 협업과 소통, 그리고 효율적인 일정 관리의<br/>
+                                    중요성을 깨닫는 좋은 기회가 되었으며, 프론트엔드<br/>
+                                    개발자로서의 역량을 한층 더 성장시킬 수 있었습니다.
                                 </div>
                             </div>
                         </div>
@@ -500,6 +529,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                 </div>
             </section>
@@ -535,6 +566,8 @@ export default function Project() {
                                     layout="intrinsic"
                                     width={600}
                                     height={600} 
+                                    placeholder="blur"
+                                    priority
                                 />
                             </div>
                             <div className="flex flex-row mb-2">
@@ -607,6 +640,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                 </div>
             </section>
@@ -629,6 +664,8 @@ export default function Project() {
                                     layout="intrinsic"
                                     width={600}
                                     height={600} 
+                                    placeholder="blur"
+                                    priority
                                 />
                             </div>
                             <div className="flex flex-row mb-2">
@@ -709,6 +746,8 @@ export default function Project() {
                         layout="intrinsic"
                         width={600}
                         height={600} 
+                        placeholder="blur"
+                        priority
                     />
                 </div>
             </section>

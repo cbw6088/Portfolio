@@ -44,6 +44,7 @@ export default function Introduction() {
                     left: `${cursorPosition.x}px`,
                     top: `${cursorPosition.y}px`,
                     transform: "translate(-50%, -50%)",
+                    willChange: "transform",
                 }}
             />
             <div 
@@ -53,6 +54,7 @@ export default function Introduction() {
                     left: `${cursorPosition.x}px`,
                     top: `${cursorPosition.y}px`,
                     transform: "translate(-50%, -50%)",
+                    willChange: "transform",
                 }}
             />
             {/* 첫 번째 섹션 */}
@@ -62,6 +64,10 @@ export default function Introduction() {
                         className="w-36 h-36 md:w-64 md:h-64"
                         src={MyImage}
                         alt="My Image"
+                        width={256} // 실제 이미지의 너비로 수정
+  height={256} // 실제 이미지의 높이로 수정
+  placeholder="blur"
+  priority
                     />
                     </div>
                     <div className="font-LilitaOne text-white text-sm md:text-lg lg:text-2xl bg-gray-800 px-2 mt-4 md:px-5 md:mt-8">
