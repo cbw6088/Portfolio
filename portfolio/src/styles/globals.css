@@ -24,6 +24,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer components {
+    .loader {
+      @apply animate-spin rounded-full h-16 w-16 border-y-4 border-gray-900 mx-auto my-auto;
+    }
+  }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
