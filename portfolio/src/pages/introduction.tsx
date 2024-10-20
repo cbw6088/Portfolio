@@ -180,159 +180,36 @@ export default function Introduction() {
                         STACKS.
                     </div>
                     <div className="mt-4 flex gap-2 md:gap-4 flex-wrap justify-center">
-                        <div className="flex flex-col">
-                            <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
-                                <Image
-                                    src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-                                    alt="HTML Badge"
-                                    width={60}
-                                    height={30}
-                                    className="w-14 h-5 md:w-18 md:h-6 lg:w-24 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-                                    alt="CSS Badge"
-                                    width={60}
-                                    height={30}
-                                    className="w-14 h-5 md:w-18 md:h-6 lg:w-20 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-                                    alt="JavaScript Badge"
-                                    width={80}
-                                    height={30}
-                                    className="w-18 h-5 md:w-24 md:h-6 lg:w-36 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
-                                    alt="C Language Badge"
-                                    width={50}
-                                    height={30}
-                                    className="w-10 h-5 md:w-12 md:h-6 lg:w-16 lg:h-8"
-                                    unoptimized
-                                />
-                            </div>
-
-                            <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
-                                <Image
-                                    src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-                                    alt="React Badge"
-                                    width={80}
-                                    height={30}
-                                    className="w-14 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-                                    alt="React Native Badge"
-                                    width={80}
-                                    height={30}
-                                    className="w-18 h-5 md:w-28 md:h-6 lg:w-40 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"
-                                    alt="Next.js Badge"
-                                    width={70}
-                                    height={30}
-                                    className="hidden md:block w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Styled--Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"
-                                    alt="Styled-Components Badge"
-                                    width={90}
-                                    height={30}
-                                    className="hidden md:block w-18 h-5 md:w-32 md:h-6 lg:w-44 lg:h-8"
-                                    unoptimized
-                                />
-                            </div>
-
-                            <div className="block md:hidden flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
-                                <Image
-                                    src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"
-                                    alt="Next.js Badge"
-                                    width={70}
-                                    height={30}
-                                    className="w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Styled--Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"
-                                    alt="Styled-Components Badge"
-                                    width={90}
-                                    height={30}
-                                    className="w-18 h-5 md:w-24 md:h-6 lg:w-36 lg:h-8"
-                                    unoptimized
-                                />
-                            </div>
-
-                            <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
-                                <Image
-                                    src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"
-                                    alt="Tailwind CSS Badge"
-                                    width={80}
-                                    height={30}
-                                    className="w-18 h-5 md:w-24 md:h-6 lg:w-36 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"
-                                    alt="Redux Badge"
-                                    width={70}
-                                    height={30}
-                                    className="w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-                                    alt="GitHub Badge"
-                                    width={70}
-                                    height={30}
-                                    className="w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"
-                                    alt="Slack Badge"
-                                    width={70}
-                                    height={30}
-                                    className="hidden md:block w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white"
-                                    alt="Notion Badge"
-                                    width={70}
-                                    height={30}
-                                    className="hidden md:block w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                            </div>
-
-                            <div className="block md:hidden flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
-                                <Image
-                                    src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"
-                                    alt="Slack Badge"
-                                    width={70}
-                                    height={30}
-                                    className="w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                                <Image
-                                    src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white"
-                                    alt="Notion Badge"
-                                    width={70}
-                                    height={30}
-                                    className="w-16 h-5 md:w-20 md:h-6 lg:w-28 lg:h-8"
-                                    unoptimized
-                                />
-                            </div>
+                    <div className="flex flex-col">
+                        <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge" />
+                            <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge" />
+                            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge" />
+                            <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Language Badge" />
+                        </div>
+                        <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Badge" />
+                            <img src="https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native Badge" />
+                            <img className="hidden md:block" src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js Badge" />
+                            <img className="hidden md:block" src="https://img.shields.io/badge/Styled--Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled-Components Badge" />
+                        </div>
+                        <div className="block md:hidden flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js Badge" />
+                            <img src="https://img.shields.io/badge/Styled--Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled-Components Badge" />
+                        </div>
+                        <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS Badge" />
+                            <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux Badge" />
+                            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge" />
+                            <img className="hidden md:block" src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="Slack Badge" />
+                            <img className="hidden md:block" src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion Badge" />
+                        </div>
+                        <div className="block md:hidden flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="Slack Badge" />
+                            <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion Badge" />
                         </div>
                     </div>
+                </div>
                     <button onClick={() => handleScrollToSection(0)} className="mt-8 text-gray-800 font-LilitaOne tracking-wider text-lg lg:text-2xl px-8 py-2">
                         BACK
                     </button>
