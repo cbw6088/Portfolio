@@ -234,7 +234,15 @@ export default function Project() {
                                         프레임워크:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600">
-                                        React, SpringBoot
+                                        SpringBoot
+                                    </div>
+                                </div>
+                                <div className="flex flex-row mb-2">
+                                    <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-18 md:w-28">
+                                        라이브러리:
+                                    </div>
+                                    <div className="text-sm md:text-lg text-gray-600">
+                                        React
                                     </div>
                                 </div>
                                 <div className="flex flex-row mb-2">
@@ -625,7 +633,15 @@ export default function Project() {
                                         프레임워크:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600">
-                                        React, ReactNative, Next.js, StringBoot
+                                        ReactNative, Next.js, StringBoot
+                                    </div>
+                                </div>
+                                <div className="flex flex-row mb-2">
+                                    <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans w-24 md:w-28">
+                                        라이브러리:
+                                    </div>
+                                    <div className="text-sm md:text-lg text-gray-600">
+                                        React
                                     </div>
                                 </div>
                                 <div className="flex flex-row mb-2">
@@ -720,7 +736,7 @@ export default function Project() {
                                 </div>
                                 <div className="flex flex-row mb-2">
                                     <div className="text-sm md:text-lg text-gray-600 w-18 md:w-28 font-BlackHanSans">
-                                        프레임워크:
+                                        라이브러리:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600">
                                         React
