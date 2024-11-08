@@ -107,6 +107,7 @@ export default function SideButtons() {
                     paddingLeft: currentPage === index ? '8px' : '0',
                     paddingRight: currentPage === index ? '8px' : '0',
                 }}
+                onClick={() => handleButtonClick(index)}
             >
                 {label}
             </div>
