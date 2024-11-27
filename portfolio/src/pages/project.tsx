@@ -276,7 +276,7 @@ export default function Project() {
                             priority
                         />
                         <div className="hidden md:block flex flex-col justify-center">
-                            <div className="w-full flex flex-row justify-start mb-4">
+                            {/* <div className="w-full flex flex-row justify-start mb-4">
                                 <Image
                                     src={Web}
                                     alt="WebLogo"
@@ -294,7 +294,7 @@ export default function Project() {
                                 >
                                     https://quizgen.site/
                                 </a>
-                            </div>
+                            </div> */}
                             <div className="w-full flex flex-row justify-start">
                                 <Image
                                     src={Git}
