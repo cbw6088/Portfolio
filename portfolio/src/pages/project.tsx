@@ -215,7 +215,7 @@ export default function Project() {
                                         역할:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
-                                        Front-End(팀장, Web UI/UX Design)
+                                        Front-End(팀장)
                                     </div>
                                 </div>
                                 <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans md:my-8">
@@ -435,7 +435,7 @@ export default function Project() {
                                         역할:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600 font-BlackHanSans">
-                                        Front-End(팀장, App UI/UX Design)
+                                        Front-End(팀장)
                                     </div>
                                 </div>
                                 <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans my-2 md:my-8">
@@ -614,7 +614,7 @@ export default function Project() {
                                         역할:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600">
-                                        Front-End(Web UI/UX Design)
+                                        Front-End(BackOffice)
                                     </div>
                                 </div>
                                 <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans my-2 md:my-8">
@@ -720,7 +720,7 @@ export default function Project() {
                                         역할:
                                     </div>
                                     <div className="text-sm md:text-lg text-gray-600">
-                                        Front-End(UI/UX Design)
+                                        Front-End
                                     </div>
                                 </div>
                                 <div className="text-lg md:text-2xl text-gray-500 font-BlackHanSans my-8">
