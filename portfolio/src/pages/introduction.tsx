@@ -153,7 +153,7 @@ export default function Introduction() {
                                 2017.02 - 2019.02 졸업
                             </div>
                             <div className="text-center md:text-left">
-                                <span className="font-bold mb-4 md:mb-0">호서직업전문학교</span> 실내디자인과
+                                <span className="font-bold mb-4 md:mb-0">학점은행제</span> 실내디자인과
                             </div>
                             <div className="text-center md:text-left">
                                 2022.02 - 2025.02 졸업예정
@@ -185,9 +185,9 @@ export default function Introduction() {
                             <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge" />
                             <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge" />
                             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge" />
-                            <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Language Badge" />
                         </div>
                         <div className="flex flex-row justify-center my-1 md:my-2 gap-2 md:gap-4">
+                            <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter Badge" />
                             <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Badge" />
                             <img src="https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native Badge" />
                             <img className="hidden md:block" src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js Badge" />
