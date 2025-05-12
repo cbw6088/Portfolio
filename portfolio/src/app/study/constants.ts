@@ -3,6 +3,7 @@ export const STUDY_CATEGORIES = [
   { id: "backend", label: "백엔드" },
   { id: "infra", label: "인프라·도구" },
   { id: "seo", label: "SEO·분석" },
+  { id: "security", label: "보안" },
   { id: "hobby", label: "취미" },
 ] as const;
 
@@ -41,4 +42,5 @@ export const STUDY_POSTS: StudyPost[] = [
   { id: "2025-03-16", categoryId: "frontend", title: "웹사이트 구조 설계: 사용자 경험과 개발 효율성을 높이는 구조화 전략", date: "2025-03-16", slug: "2025-03-16" },
   { id: "2025-03-13", categoryId: "frontend", title: "Next.js: React 기반 풀스택 프레임워크 완전 정복", date: "2025-03-13", slug: "2025-03-13" },
   { id: "2025-02-23", categoryId: "frontend", title: "React와 현대 프론트엔드 프레임워크: 선택의 기준과 최적화 전략", date: "2025-02-23", slug: "2025-02-23" },
+  { id: "2025-05-12", categoryId: "security", title: "WAF란?", date: "2025-05-12", slug: "2025-05-12" },
 ];
