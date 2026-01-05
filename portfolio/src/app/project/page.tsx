@@ -1,25 +1,26 @@
-import React, {useEffect, useState} from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { showBar } from "@/feature/bar/TopBarSlice";
-import Image from 'next/image';
+import Image from "next/image";
 import SideButtons from "@/components/button/SideButton";
 import TopBar from "@/components/bar/TopBar";
-import Git from "../styles/icon/git.png";
-import Web from "../styles/icon/web.png";
-import quizgen from "../styles/images/quizgen.png";
-import quzigen2 from "../styles/images/quizgen2.png";
-import goaldiary from "../styles/images/goaldiary.png";
-import goaldiary2 from "../styles/images/goaldiary2.png";
-import lucid from "../styles/images/lucid.png";
-import nickname from "../styles/images/nickname.png";
-import Head from 'next/head';
+import Git from "@/styles/icon/git.png";
+import Web from "@/styles/icon/web.png";
+import quizgen from "@/styles/images/quizgen.png";
+import quzigen2 from "@/styles/images/quizgen2.png";
+import goaldiary from "@/styles/images/goaldiary.png";
+import goaldiary2 from "@/styles/images/goaldiary2.png";
+import lucid from "@/styles/images/lucid.png";
+import nickname from "@/styles/images/nickname.png";
 
 export default function Project() {
     const dispatch = useDispatch();
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        dispatch(showBar('Introduction'));
+        dispatch(showBar('Project'));
 
         const handleMouseMove = (e: MouseEvent) => {
             setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -40,14 +41,8 @@ export default function Project() {
         });
     };
 
-    return(
-        <>
-            <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
-            </Head>
-            <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
+    return (
+        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
                 {/* 마우스 커서 */}
                 <div 
                     id="cursor-dot" 
@@ -79,7 +74,6 @@ export default function Project() {
                             <Image
                                 src={quizgen}
                                 alt="QuizGen Image"
-                                layout="intrinsic"
                                 width={500}
                                 height={500} 
                                 placeholder="blur"
@@ -105,7 +99,6 @@ export default function Project() {
                                 className="md:mt-2 lg:my-8"
                                 src={goaldiary}
                                 alt="goaldiary Image"
-                                layout="intrinsic"
                                 width={600}
                                 height={600} 
                                 placeholder="blur"
@@ -139,7 +132,6 @@ export default function Project() {
                                         className="mb-4"
                                         src={quizgen}
                                         alt="QuizGen Image"
-                                        layout="intrinsic"
                                         width={600}
                                         height={600} 
                                         placeholder="blur"
@@ -150,7 +142,6 @@ export default function Project() {
                                             <Image
                                                 src={Web}
                                                 alt="WebLogo"
-                                                layout="intrinsic"
                                                 width={20}
                                                 height={20} 
                                                 placeholder="blur"
@@ -169,7 +160,6 @@ export default function Project() {
                                             <Image
                                                 src={Git}
                                                 alt="GitLogo"
-                                                layout="intrinsic"
                                                 width={20}
                                                 height={20} 
                                                 placeholder="blur"
@@ -269,7 +259,6 @@ export default function Project() {
                             className="hidden md:block lg:mb-12"
                             src={quizgen}
                             alt="QuizGen Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -280,7 +269,6 @@ export default function Project() {
                                 <Image
                                     src={Web}
                                     alt="WebLogo"
-                                    layout="intrinsic"
                                     width={25}
                                     height={25} 
                                     placeholder="blur"
@@ -299,7 +287,6 @@ export default function Project() {
                                 <Image
                                     src={Git}
                                     alt="GitLogo"
-                                    layout="intrinsic"
                                     width={25}
                                     height={25} 
                                     placeholder="blur"
@@ -356,7 +343,6 @@ export default function Project() {
                             className="hidden md:block mb-12"
                             src={quzigen2}
                             alt="QuizGen Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -380,7 +366,6 @@ export default function Project() {
                                         className="mb-4 md:mb-12"
                                         src={goaldiary}
                                         alt="GoalDiary Image"
-                                        layout="intrinsic"
                                         width={600}
                                         height={600} 
                                         placeholder="blur"
@@ -390,7 +375,6 @@ export default function Project() {
                                         <Image
                                             src={Git}
                                             alt="GitLogo"
-                                            layout="intrinsic"
                                             width={20}
                                             height={20}
                                             placeholder="blur"
@@ -473,7 +457,6 @@ export default function Project() {
                             className="hidden md:block mb-12"
                             src={goaldiary}
                             alt="GoalDiary Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -483,7 +466,6 @@ export default function Project() {
                             <Image
                                 src={Git}
                                 alt="GitLogo"
-                                layout="intrinsic"
                                 width={25}
                                 height={25} 
                                 className="hidden md:block"
@@ -541,7 +523,6 @@ export default function Project() {
                             className="hidden md:block mb-12"
                             src={goaldiary2}
                             alt="GoalDiary2 Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -578,7 +559,6 @@ export default function Project() {
                                         className="block md:hidden mb-4 md:mb-12"
                                         src={lucid}
                                         alt="GoalDiary Image"
-                                        layout="intrinsic"
                                         width={600}
                                         height={600} 
                                         placeholder="blur"
@@ -660,7 +640,6 @@ export default function Project() {
                             className="hidden md:block mb-12"
                             src={lucid}
                             alt="GoalDiary Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -684,7 +663,6 @@ export default function Project() {
                                         className="block md:hidden mb-12"
                                         src={nickname}
                                         alt="Nickname Image"
-                                        layout="intrinsic"
                                         width={600}
                                         height={600} 
                                         placeholder="blur"
@@ -766,7 +744,6 @@ export default function Project() {
                             className="hidden md:block mb-12"
                             src={nickname}
                             alt="Nickname Image"
-                            layout="intrinsic"
                             width={600}
                             height={600} 
                             placeholder="blur"
@@ -777,6 +754,5 @@ export default function Project() {
                 <SideButtons/>
                 <TopBar/>
             </div>
-        </>
-    )
+    );
 }

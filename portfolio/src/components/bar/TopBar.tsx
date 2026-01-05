@@ -1,9 +1,12 @@
+"use client";
+
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
-import { useRouter } from "next/router";
+import { RootState } from "@/redux/store";
+import { useRouter, usePathname } from "next/navigation";
 
 const TopBar = () => {
     const router = useRouter();
+    const pathname = usePathname();
     const { isVisible, barType } = useSelector((state: RootState) => state.bar);
     if (!isVisible || !barType) return null;
 
@@ -22,7 +25,7 @@ const TopBar = () => {
             <div className="flex justify-center space-x-6">
                 <button
                     className={`px-2 text-sm font-LilitaOne tracking-wider ${
-                        router.pathname === '/' ? 'text-white bg-gray-500' : 'text-gray-300'
+                        pathname === '/' ? 'text-white bg-gray-500' : 'text-gray-300'
                     }`}
                     onClick={handleHomeClick}
                 >
@@ -30,7 +33,7 @@ const TopBar = () => {
                 </button>
                 <button
                     className={`px-2 text-sm font-LilitaOne tracking-wider ${
-                        router.pathname === '/introduction' ? 'text-white bg-gray-500' : 'text-gray-300'
+                        pathname === '/introduction' ? 'text-white bg-gray-500' : 'text-gray-300'
                     }`}
                     onClick={handleIntroductionClick}
                 >
@@ -38,7 +41,7 @@ const TopBar = () => {
                 </button>
                 <button
                     className={`px-2 text-sm font-LilitaOne tracking-wider ${
-                        router.pathname === '/project' ? 'text-white bg-gray-500' : 'text-gray-300'
+                        pathname === '/project' ? 'text-white bg-gray-500' : 'text-gray-300'
                     }`}
                     onClick={handleProjectClick}
                 >

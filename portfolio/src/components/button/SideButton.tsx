@@ -1,14 +1,17 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { RootState } from '@/redux/store';
 import { setCurrentPage } from '@/feature/button/SideButtonSlice';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 
 const pageLabels = ['PORTFOLIO.', 'INTRODUCTION.', 'PROJECT.'];
 const pageRoutes = ['/', '/introduction', '/project'];
 
 export default function SideButtons() {
     const router = useRouter();
+    const pathname = usePathname();
     const dispatch = useDispatch();
     const currentPage = useSelector((state: RootState) => state.button.currentPage);
     const [hovered, setHovered] = useState(false);
@@ -42,11 +45,11 @@ export default function SideButtons() {
     }, []);
 
     useEffect(() => {
-        const currentRouteIndex = pageRoutes.indexOf(router.pathname);
+        const currentRouteIndex = pageRoutes.indexOf(pathname ?? '');
         if (currentRouteIndex !== -1) {
             dispatch(setCurrentPage(currentRouteIndex));
         }
-    }, [router.pathname, dispatch]);
+    }, [pathname, dispatch]);
 
     const handleMouseEnter = () => {
         setHovered(true);
