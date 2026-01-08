@@ -80,11 +80,11 @@ export default function Home() {
                         <div className="relative lg:w-auto md:w-56 w-40">
                             <div className="absolute inset-0 bg-white" style={{ clipPath: 'inset(12px 0px 0px 0px)' }}/>
                             <div className="relative text-gray-800 font-bold md:ml-14 ml-4 flex lg:justify-end lg:text-3xl md:text-lg text-md font-LilitaOne tracking-wider">
-                                CHOI BYUNGWOO.
+                                CHOI BYUNGWOO
                             </div>
                         </div>
                         <div className="font-LilitaOne tracking-wider lg:text-lg md:text-md text-sm text-gray-800 ml-4 md:ml-14">
-                            010 4186 6088.
+                            010 4186 6088
                         </div>
                         <div className="font-LilitaOne tracking-wider lg:text-lg md:text-md text-sm text-gray-800 ml-4 md:ml-14">
                             cbw60881@gmail.com

@@ -32,10 +32,30 @@ const config: Config = {
                 '0%': { opacity: "0" },
                 '100%': { opacity: "1" },
             },
+            softPulse: {
+                '0%, 100%': { opacity: "1", transform: "translateY(0) scale(1)" },
+                '50%': { opacity: "0.92", transform: "translateY(-2px) scale(1.02)" },
+            },
+            float: {
+                '0%, 100%': { transform: "translateY(0)" },
+                '50%': { transform: "translateY(-8px)" },
+            },
+            lineGrow: {
+                '0%': { transform: "scaleX(0)", opacity: "0" },
+                '100%': { transform: "scaleX(1)", opacity: "1" },
+            },
+            gradientMove: {
+                '0%, 100%': { backgroundPosition: "0% 50%" },
+                '50%': { backgroundPosition: "100% 50%" },
+            },
         },
       animation: {
         flipx : 'flipx 2s 0.25s 1',
         fadeIn: 'fadeIn 1s ease-in forwards',
+        softPulse: 'softPulse 3s ease-in-out infinite',
+        float: 'float 4s ease-in-out infinite',
+        lineGrow: 'lineGrow 0.6s ease-out forwards',
+        gradientMove: 'gradientMove 15s ease infinite',
       }
     },
     fontFamily: {

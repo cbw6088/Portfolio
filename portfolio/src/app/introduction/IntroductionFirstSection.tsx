@@ -58,7 +58,7 @@ export default function IntroductionFirstSection({ onNext }: IntroductionFirstSe
                     <div className="flex flex-row items-center">
                         <Image className="w-4 h-4 lg:w-6 lg:h-6" src={Phone} alt="Phone"/>
                         <div className="font-LilitaOne tracking-wider md:text-md lg:text-lg text-gray-800 ml-2">
-                            010 4186 6088.
+                            010 4186 6088
                         </div>
                     </div>
                     <div className="flex flex-row items-center">
