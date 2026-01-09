@@ -6,8 +6,8 @@ import { RootState } from "@/redux/store";
 import { setCurrentPage } from "@/feature/button/SideButtonSlice";
 import { useRouter, usePathname } from "next/navigation";
 
-const pageLabels = ["Portfolio", "Introduction", "Project"];
-const pageRoutes = ["/", "/introduction", "/project"];
+const pageLabels = ["Portfolio", "Introduction", "Project", "Study"];
+const pageRoutes = ["/", "/introduction", "/project", "/study"];
 
 export default function SideButtonTest() {
   const router = useRouter();
