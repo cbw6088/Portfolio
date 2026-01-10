@@ -7,7 +7,7 @@ import { setCurrentPage } from "@/feature/button/SideButtonSlice";
 import { useRouter, usePathname } from "next/navigation";
 
 const pageLabels = ["Portfolio", "Introduction", "Project", "Study"];
-const pageRoutes = ["/", "/introduction", "/project", "/study"];
+const pageRoutes = ["/", "/introduction_test", "/project", "/study"];
 
 export default function SideButtonTest() {
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function SideButtonTest() {
   useEffect(() => {
     const path = pathname ?? "";
     const routeIndex = pageRoutes.indexOf(path);
-    const index = routeIndex !== -1 ? routeIndex : path === "/home_test" ? 0 : -1;
+    const index = routeIndex !== -1 ? routeIndex : (path === "/home_test" ? 0 : path === "/introduction_test" ? 1 : -1);
     if (index !== -1) dispatch(setCurrentPage(index));
   }, [pathname, dispatch]);
 
