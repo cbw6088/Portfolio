@@ -7,7 +7,7 @@ import { setCurrentPage } from "@/feature/button/SideButtonSlice";
 import { useRouter, usePathname } from "next/navigation";
 
 const pageLabels = ["Portfolio", "Introduction", "Project", "Study"];
-const pageRoutes = ["/", "/introduction_test", "/project", "/study"];
+const pageRoutes = ["/", "/introduction_test", "/project_test", "/study"];
 
 export default function SideButtonTest() {
   const router = useRouter();
