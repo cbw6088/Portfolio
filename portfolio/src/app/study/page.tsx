@@ -33,12 +33,12 @@ export default function StudyPage() {
         <main className="flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
             <header className="mb-8">
-              <h1 className="font-LilitaOne text-3xl sm:text-4xl text-stone-800 tracking-tight">
-                Study.
-              </h1>
-              <p className="text-stone-600 text-sm mt-2 max-w-md">
-                배운 내용을 주제별로 정리해 둔 공간입니다.
+              <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
+                Study
               </p>
+              <h1 className="font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-2">
+                Archive
+              </h1>
             </header>
 
             <StudyCategoryNav current={category} onSelect={setCategory} />

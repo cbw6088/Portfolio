@@ -69,15 +69,19 @@ export default function SideButtonTest() {
           return (
             <div
               key={index}
-              className="hidden md:flex items-center gap-3 min-w-0"
+              className="group hidden md:flex items-center gap-3 min-w-0"
             >
-              {/* 라벨: 사이드바가 열리면 바 안에서 보임 */}
+              {/* 라벨: 사이드바가 열리면 바 안에서 보임, 클릭 시 이동 */}
               <span
-                className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out ${
+                role="button"
+                tabIndex={0}
+                onClick={() => handleClick(index)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(index); } }}
+                className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out cursor-pointer ${
                   hovered
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-2 pointer-events-none"
-                } ${isActive ? "text-amber-600" : "text-stone-500"}`}
+                } ${isActive ? "text-amber-600" : "text-stone-500 group-hover:text-amber-500"}`}
               >
                 {label}
               </span>
@@ -92,7 +96,7 @@ export default function SideButtonTest() {
                   className={`block rounded-full transition-all duration-300 ease-out ${
                     isActive
                       ? "w-2.5 h-2.5 bg-amber-600 shadow-[0_0_0_2px_rgba(217,119,6,0.2)]"
-                      : "w-2 h-2 border-2 border-stone-400 hover:border-amber-500/70 hover:scale-110"
+                      : "w-2 h-2 border-2 border-stone-400 group-hover:border-amber-500/70 group-hover:scale-110"
                   }`}
                 />
               </button>

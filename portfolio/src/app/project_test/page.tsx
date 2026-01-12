@@ -26,9 +26,10 @@ export default function ProjectTestPage() {
             <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
               Project
             </p>
-            <h1 className="font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-2">
-              프로젝트
+            <h1 className="font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-8">
+              Works
             </h1>
+
             {personalProjects.length > 0 && (
               <section className="mb-10">
                 <h2 className="font-semibold text-stone-800 text-lg mb-4">
