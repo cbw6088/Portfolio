@@ -6,7 +6,7 @@ import { showBar } from "@/feature/bar/TopBarSlice";
 import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
 import { ProjectCard } from "./components";
-import { PROJECTS } from "./constants";
+import { PERSONAL_PROJECTS, WORK_PROJECTS } from "./constants";
 
 export default function ProjectTestPage() {
   const dispatch = useDispatch();
@@ -15,8 +15,8 @@ export default function ProjectTestPage() {
     dispatch(showBar("Home"));
   }, [dispatch]);
 
-  const personalProjects = PROJECTS.filter((p) => p.type === "personal");
-  const workProjects = PROJECTS.filter((p) => p.type === "work");
+  const workProjects = WORK_PROJECTS;
+  const personalProjects = PERSONAL_PROJECTS;
 
   return (
     <div className="h-screen max-h-[100dvh] overflow-hidden">
@@ -30,23 +30,8 @@ export default function ProjectTestPage() {
               Works
             </h1>
 
-            {personalProjects.length > 0 && (
-              <section className="mb-10">
-                <h2 className="font-semibold text-stone-800 text-lg mb-4">
-                  개인 프로젝트
-                </h2>
-                <ul className="space-y-4">
-                  {personalProjects.map((project) => (
-                    <li key={project.id}>
-                      <ProjectCard project={project} />
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
             {workProjects.length > 0 && (
-              <section>
+              <section className="mb-10">
                 <h2 className="font-semibold text-stone-800 text-lg mb-4">
                   현업 프로젝트
                 </h2>
@@ -55,6 +40,20 @@ export default function ProjectTestPage() {
                 </p>
                 <ul className="space-y-4">
                   {workProjects.map((project) => (
+                    <li key={project.id}>
+                      <ProjectCard project={project} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            {personalProjects.length > 0 && (
+              <section>
+                <h2 className="font-semibold text-stone-800 text-lg mb-4">
+                  개인 프로젝트
+                </h2>
+                <ul className="space-y-4">
+                  {personalProjects.map((project) => (
                     <li key={project.id}>
                       <ProjectCard project={project} />
                     </li>
