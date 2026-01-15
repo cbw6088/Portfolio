@@ -20,12 +20,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const tech = project.tech;
   const hasTech = tech && (tech.language || tech.framework || tech.library || tech.devops || tech.etc);
   const aboutParagraphs = project.about?.split("\n\n").filter(Boolean) ?? [];
+  const workForm = project.workForm;
 
   return (
     <article
       className={`rounded-xl border bg-white p-4 sm:p-5 hover:border-stone-300 transition-colors ${
         isWork
-          ? "border border-stone-200 border-l-4 border-l-amber-500/70"
+          ? "border border-stone-200 border-l-4 border-l-amber-500/70 sm:min-h-[210px]"
           : "border-stone-200"
       }`}
     >
@@ -83,6 +84,41 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <MetaRow label="ETC" value={tech!.etc} />
               )}
             </div>
+          </div>
+        )}
+
+        {isWork && workForm && (
+          <div className="pt-3 mt-1 border-t border-stone-100 space-y-3">
+            {workForm.summary && (
+              <div className="space-y-1">
+                <h4 className="text-stone-500 text-xs font-semibold uppercase tracking-wider">
+                  프로젝트 개요
+                </h4>
+                <p className="text-sm text-stone-600 leading-relaxed whitespace-pre-line">
+                  {workForm.summary}
+                </p>
+              </div>
+            )}
+            {workForm.responsibilities && (
+              <div className="space-y-1">
+                <h4 className="text-stone-500 text-xs font-semibold uppercase tracking-wider">
+                  담당 업무
+                </h4>
+                <p className="text-sm text-stone-600 leading-relaxed whitespace-pre-line">
+                  {workForm.responsibilities}
+                </p>
+              </div>
+            )}
+            {workForm.achievements && (
+              <div className="space-y-1">
+                <h4 className="text-stone-500 text-xs font-semibold uppercase tracking-wider">
+                  성과
+                </h4>
+                <p className="text-sm text-stone-600 leading-relaxed whitespace-pre-line">
+                  {workForm.achievements}
+                </p>
+              </div>
+            )}
           </div>
         )}
 

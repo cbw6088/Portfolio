@@ -25,6 +25,15 @@ export interface ProjectItem {
   tech?: ProjectTech;
   about?: string;
   links?: { label: string; href: string }[];
+  /** 현업 프로젝트에서 상세하게 적을 수 있는 폼 영역 */
+  workForm?: {
+    /** 프로젝트/서비스 개요 */
+    summary?: string;
+    /** 구체적인 담당 업무 */
+    responsibilities?: string;
+    /** 숫자나 임팩트를 중심으로 한 성과 */
+    achievements?: string;
+  };
 }
 
 export const PROJECTS: ProjectItem[] = [...PERSONAL_PROJECTS, ...WORK_PROJECTS];
