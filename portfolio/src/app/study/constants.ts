@@ -43,4 +43,12 @@ export const STUDY_POSTS: StudyPost[] = [
   { id: "2025-03-13", categoryId: "frontend", title: "Next.js: React 기반 풀스택 프레임워크 완전 정복", date: "2025-03-13", slug: "2025-03-13" },
   { id: "2025-02-23", categoryId: "frontend", title: "React와 현대 프론트엔드 프레임워크: 선택의 기준과 최적화 전략", date: "2025-02-23", slug: "2025-02-23" },
   { id: "2025-05-12", categoryId: "security", title: "WAF란?", date: "2025-05-12", slug: "2025-05-12" },
+  { id: "2025-06-09", categoryId: "security", title: "SWG란?", date: "2025-06-09", slug: "2025-06-09" },
+  { id: "2025-07-17", categoryId: "security", title: "RBI란?", date: "2025-07-17", slug: "2025-07-17" },
+  { id: "2025-07-24", categoryId: "security", title: "SVA란?", date: "2025-07-24", slug: "2025-07-24" },
+  { id: "2025-08-04", categoryId: "security", title: "ZTNA란?", date: "2025-08-04", slug: "2025-08-04" },
+  { id: "2025-09-23", categoryId: "security", title: "인증과 인가의 차이", date: "2025-09-23", slug: "2025-09-23" },
+  { id: "2025-09-28", categoryId: "security", title: "최소 권한 원칙이란?", date: "2025-09-28", slug: "2025-09-28" },
+  { id: "2025-10-06", categoryId: "security", title: "패스워드 보안의 기본", date: "2025-10-06", slug: "2025-10-06" },
+  { id: "2025-10-13", categoryId: "security", title: "로그와 모니터링의 중요성", date: "2025-10-13", slug: "2025-10-13" },
 ];
