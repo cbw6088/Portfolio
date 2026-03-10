@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/redux/store";
+import type { RootState } from "@/redux/store";
 import { setCurrentPage } from "@/feature/button/SideButtonSlice";
 import { useRouter, usePathname } from "next/navigation";
 
 const pageLabels = ["Portfolio", "Introduction", "Project", "Study"];
-const pageRoutes = ["/", "/introduction_test", "/project_test", "/study"];
+const pageRoutes = ["/", "/introduction", "/project", "/study"];
 
 export default function SideButtonTest() {
   const router = useRouter();
@@ -17,19 +17,23 @@ export default function SideButtonTest() {
   const [hovered, setHovered] = useState(false);
 
   const saveScrollPosition = () => {
+    if (typeof window === "undefined") return;
     sessionStorage.setItem("scrollPosition", JSON.stringify(window.scrollY));
   };
 
   const restoreScrollPosition = () => {
+    if (typeof window === "undefined") return;
     const saved = sessionStorage.getItem("scrollPosition");
     if (saved) window.scrollTo(0, JSON.parse(saved));
   };
 
   const saveCurrentPage = (index: number) => {
+    if (typeof window === "undefined") return;
     sessionStorage.setItem("currentPage", JSON.stringify(index));
   };
 
   const restoreCurrentPage = () => {
+    if (typeof window === "undefined") return;
     const saved = sessionStorage.getItem("currentPage");
     if (saved) dispatch(setCurrentPage(JSON.parse(saved)));
   };
@@ -37,12 +41,13 @@ export default function SideButtonTest() {
   useEffect(() => {
     restoreScrollPosition();
     restoreCurrentPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const path = pathname ?? "";
     const routeIndex = pageRoutes.indexOf(path);
-    const index = routeIndex !== -1 ? routeIndex : (path === "/home_test" ? 0 : path === "/introduction_test" ? 1 : -1);
+    const index = routeIndex !== -1 ? routeIndex : -1;
     if (index !== -1) dispatch(setCurrentPage(index));
   }, [pathname, dispatch]);
 
@@ -71,17 +76,25 @@ export default function SideButtonTest() {
               key={index}
               className="group flex items-center gap-3 min-w-0"
             >
-              {/* 라벨: 사이드바가 열리면 바 안에서 보임, 클릭 시 이동 */}
               <span
                 role="button"
                 tabIndex={0}
                 onClick={() => handleClick(index)}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(index); } }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleClick(index);
+                  }
+                }}
                 className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out cursor-pointer ${
                   hovered
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-2 pointer-events-none"
-                } ${isActive ? "text-amber-600" : "text-stone-500 group-hover:text-amber-500"}`}
+                } ${
+                  isActive
+                    ? "text-amber-600"
+                    : "text-stone-500 group-hover:text-amber-500"
+                }`}
               >
                 {label}
               </span>
@@ -107,3 +120,4 @@ export default function SideButtonTest() {
     </nav>
   );
 }
+

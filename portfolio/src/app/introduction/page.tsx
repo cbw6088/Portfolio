@@ -1,64 +1,46 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { showBar } from "@/feature/bar/TopBarSlice";
-import SideButtons from "@/components/button/SideButton";
+import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
-import IntroductionFirstSection from "./IntroductionFirstSection";
-import IntroductionSecondSection from "./IntroductionSecondSection";
+import {
+  IntroProfile,
+  IntroEducation,
+  IntroExperience,
+  IntroStacks,
+} from "./components";
 
-export default function Introduction() {
-    const dispatch = useDispatch();
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+export default function IntroductionTestPage() {
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(showBar('Introduction'));
-        const handleMouseMove = (e: MouseEvent) => {
-            setCursorPosition({ x: e.clientX, y: e.clientY });
-        };
+  useEffect(() => {
+    dispatch(showBar("Home"));
+  }, [dispatch]);
 
-        document.addEventListener('mousemove', handleMouseMove);
+  return (
+    <div className="h-screen max-h-[100dvh] overflow-hidden">
+      <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn">
+        <main className="flex-1 min-h-0 overflow-y-auto">
+          <div className="max-w-2xl mx-auto px-6 pt-16 pb-8 sm:py-12">
+            <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
+              Introduction
+            </p>
+            <h1 className="font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-8">
+              Profile
+            </h1>
 
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [dispatch]);
+            <IntroProfile />
+            <IntroEducation />
+            <IntroExperience />
+            <IntroStacks />
+          </div>
+        </main>
 
-    const handleScrollToSection = (section: number) => {
-        const targetSection = document.querySelectorAll('section')[section];
-        targetSection?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    };
-
-    return (
-        <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
-            <div
-                id="cursor-dot"
-                className="absolute w-cursor h-cursor bg-orange-600 rounded-full transition-transform duration-150 ease-in-out pointer-events-none"
-                style={{
-                    left: `${cursorPosition.x}px`,
-                    top: `${cursorPosition.y}px`,
-                    transform: "translate(-50%, -50%)",
-                    willChange: "transform",
-                }}
-            />
-            <div
-                id="cursor-dot-outline"
-                className="absolute w-cursor-outline h-cursor-outline border border-red-500/30 rounded-full transition-transform duration-150 ease-in-out pointer-events-none"
-                style={{
-                    left: `${cursorPosition.x}px`,
-                    top: `${cursorPosition.y}px`,
-                    transform: "translate(-50%, -50%)",
-                    willChange: "transform",
-                }}
-            />
-            <IntroductionFirstSection onNext={() => handleScrollToSection(1)} />
-            <IntroductionSecondSection onBack={() => handleScrollToSection(0)} />
-            <SideButtons/>
-            <TopBar/>
-        </div>
-    );
+        <SideButtonTest />
+        <TopBar />
+      </div>
+    </div>
+  );
 }

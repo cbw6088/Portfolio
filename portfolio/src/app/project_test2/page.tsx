@@ -11,9 +11,9 @@ import {
   GoalDiarySection,
   DrLucidSection,
   NicknameGeneratorSection,
-} from "../project_test2/sections";
+} from "./sections";
 
-export default function ProjectLegacyPage() {
+export default function Project() {
   const dispatch = useDispatch();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
@@ -41,6 +41,7 @@ export default function ProjectLegacyPage() {
 
   return (
     <div className="w-screen h-screen bg-gray-100 overflow-y-scroll scroll-start snap-y snap-mandatory animate-fadeIn">
+      {/* 마우스 커서 */}
       <div
         id="cursor-dot"
         className="absolute w-cursor h-cursor bg-orange-600 rounded-full transition-transform duration-150 ease-in-out pointer-events-none"
@@ -73,4 +74,3 @@ export default function ProjectLegacyPage() {
     </div>
   );
 }
-
