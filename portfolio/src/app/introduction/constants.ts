@@ -18,8 +18,7 @@ export const INTRO_CONTACTS = [
 
 export const INTRO_EDUCATION = [
   { period: "2011.02 - 2014.02 졸업", name: "성동공업고등학교", detail: "컴퓨터응용기계경영과" },
-  { period: "2017.02 - 2019.02 졸업", name: "학점은행제", detail: "실내디자인과" },
-  { period: "2022.02 - 2025.02 졸업예정", name: "세종대학교", detail: "컴퓨터공학과" },
+  { period: "2022.02 - 2025.02 졸업", name: "세종대학교", detail: "컴퓨터공학과" },
   { period: "2023.01 - 2023.02 수료", name: "42Seoul", detail: "라피신9기" }
 ] as const;
 
