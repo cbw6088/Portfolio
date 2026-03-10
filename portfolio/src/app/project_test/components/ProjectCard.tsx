@@ -24,17 +24,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article
-      className={`rounded-xl border bg-white p-4 sm:p-5 hover:border-stone-300 transition-colors ${
-        isWork
-          ? "border border-stone-200 border-l-4 border-l-amber-500/70 sm:min-h-[210px]"
-          : "border-stone-200"
-      }`}
+      className="rounded-xl border bg-white p-4 sm:p-5 border border-stone-200 border-l-4 border-l-stone-300/80 hover:border-stone-300 hover:border-l-amber-500/80 transition-colors"
     >
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2 flex-wrap">
-          {isWork && (
+          {isWork ? (
             <span className="text-[10px] font-medium tracking-wider text-amber-600 uppercase px-2 py-0.5 rounded bg-amber-50">
               현업
+            </span>
+          ) : (
+            <span className="text-[10px] font-medium tracking-wider text-stone-600 uppercase px-2 py-0.5 rounded bg-stone-100">
+              개인
             </span>
           )}
           <h3 className="font-semibold text-stone-800 text-lg">
@@ -72,7 +72,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <MetaRow label="언어" value={tech!.language} />
               )}
               {tech!.framework && (
-                <MetaRow label="프레임워크" value={tech!.framework} />
+                <MetaRow
+                  label={
+                    tech!.framework.includes("WordPress")
+                      ? "플랫폼/CMS"
+                      : "프레임워크"
+                  }
+                  value={tech!.framework}
+                />
               )}
               {tech!.library && (
                 <MetaRow label="라이브러리" value={tech!.library} />
@@ -80,9 +87,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {tech!.devops && (
                 <MetaRow label="DevOps" value={tech!.devops} />
               )}
-              {tech!.etc && (
-                <MetaRow label="ETC" value={tech!.etc} />
-              )}
+              {tech!.etc && <MetaRow label="ETC" value={tech!.etc} />}
             </div>
           </div>
         )}

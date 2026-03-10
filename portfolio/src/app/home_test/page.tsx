@@ -34,7 +34,7 @@ export default function HomeTest() {
         <HomeCursor x={cursorPosition.x} y={cursorPosition.y} />
         <HomeBackground />
 
-        <main className="relative flex-1 flex flex-col items-center justify-center min-h-0 overflow-hidden px-6 py-6 sm:py-8">
+        <main className="relative flex-1 flex flex-col items-center justify-center min-h-0 overflow-hidden px-6 pt-16 pb-6 sm:py-8">
           <div className="max-w-2xl w-full text-center space-y-3 sm:space-y-5 overflow-hidden">
             <HomeHero mounted={mounted} tagline={HOME_TAGLINE} />
             <HomeContact

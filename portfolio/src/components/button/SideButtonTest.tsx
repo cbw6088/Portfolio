@@ -55,7 +55,7 @@ export default function SideButtonTest() {
 
   return (
     <nav
-      className={`fixed right-0 top-0 bottom-0 flex flex-col justify-center overflow-hidden border-l border-stone-200/80 bg-stone-50/90 backdrop-blur-sm transition-[width] duration-300 ease-out ${
+      className={`hidden md:flex fixed right-0 top-0 bottom-0 flex-col justify-center overflow-hidden border-l border-stone-200/80 bg-stone-50/90 backdrop-blur-sm transition-[width] duration-300 ease-out ${
         hovered ? "w-44" : "w-14"
       }`}
       onMouseEnter={() => setHovered(true)}
@@ -69,7 +69,7 @@ export default function SideButtonTest() {
           return (
             <div
               key={index}
-              className="group hidden md:flex items-center gap-3 min-w-0"
+              className="group flex items-center gap-3 min-w-0"
             >
               {/* 라벨: 사이드바가 열리면 바 안에서 보임, 클릭 시 이동 */}
               <span

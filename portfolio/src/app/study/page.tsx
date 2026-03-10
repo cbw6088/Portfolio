@@ -31,7 +31,7 @@ export default function StudyPage() {
     <div className="h-screen max-h-[100dvh] overflow-hidden">
       <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn">
         <main className="flex-1 min-h-0 overflow-y-auto">
-          <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
+          <div className="max-w-2xl mx-auto px-6 pt-16 pb-8 sm:py-12">
             <header className="mb-8">
               <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
                 Study
