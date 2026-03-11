@@ -14,12 +14,12 @@ export const WORK_PROJECTS: ProjectItem[] = [
     tech: {
       language: "TypeScript (FE), Java (BE)",
       framework: "Next.js",
-      library: "React",
+      library: "React, Tailwind CSS",
       devops: "Docker",
       etc: "GitLab, Jira, Figma, XD, Rest API",
     },
     links: [
-      { label: "브랜드 사이트", href: "https://www.monitorapp.com/ko" },
+      { label: "MONITORAPP Brand Site", href: "https://www.monitorapp.com/ko" },
     ],
     workForm: {
       summary:
@@ -52,7 +52,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     tech: {
       language: "TypeScript (FE), Java (BE)",
       framework: "Next.js",
-      library: "React",
+      library: "React, Tailwind CSS",
       devops: "Docker",
       etc: "GitLab, Jira, Figma, XD, Rest API",
     },
