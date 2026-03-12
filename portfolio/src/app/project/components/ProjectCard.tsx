@@ -18,13 +18,16 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const isWork = project.type === "work";
   const tech = project.tech;
-  const hasTech = tech && (tech.language || tech.framework || tech.library || tech.devops || tech.etc);
+  const hasTech =
+    tech &&
+    (tech.language || tech.framework || tech.library || tech.devops || tech.etc);
   const aboutParagraphs = project.about?.split("\n\n").filter(Boolean) ?? [];
   const workForm = project.workForm;
 
   return (
     <article
-      className="rounded-xl border bg-white p-4 sm:p-5 border border-stone-200 border-l-4 border-l-stone-300/80 hover:border-stone-300 hover:border-l-amber-500/80 transition-colors"
+      id={`project-${project.id}`}
+      className="rounded-xl border bg-white p-4 sm:p-5 border border-stone-200 border-l-4 border-l-stone-300/80 hover:border-stone-300 hover:border-l-amber-500/80 transition-colors scroll-mt-24"
     >
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2 flex-wrap">
@@ -45,15 +48,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="space-y-1">
           <MetaRow label="기간" value={project.period} />
-          {project.platform && (
-            <MetaRow label="플랫폼" value={project.platform} />
-          )}
-          {project.teamSize && (
-            <MetaRow label="인원" value={project.teamSize} />
-          )}
-          {project.role && (
-            <MetaRow label="역할" value={project.role} />
-          )}
+          {project.platform && <MetaRow label="플랫폼" value={project.platform} />}
+          {project.teamSize && <MetaRow label="인원" value={project.teamSize} />}
+          {project.role && <MetaRow label="역할" value={project.role} />}
         </div>
 
         {project.description && !project.about && (
@@ -68,9 +65,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               개발환경
             </h4>
             <div className="space-y-1 text-sm">
-              {tech!.language && (
-                <MetaRow label="언어" value={tech!.language} />
-              )}
+              {tech!.language && <MetaRow label="언어" value={tech!.language} />}
               {tech!.framework && (
                 <MetaRow
                   label={
@@ -84,9 +79,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {tech!.library && (
                 <MetaRow label="라이브러리" value={tech!.library} />
               )}
-              {tech!.devops && (
-                <MetaRow label="DevOps" value={tech!.devops} />
-              )}
+              {tech!.devops && <MetaRow label="DevOps" value={tech!.devops} />}
               {tech!.etc && <MetaRow label="ETC" value={tech!.etc} />}
             </div>
           </div>
@@ -159,3 +152,4 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </article>
   );
 }
+

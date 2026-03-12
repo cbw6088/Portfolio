@@ -10,6 +10,7 @@ import {
   IntroEducation,
   IntroExperience,
   IntroStacks,
+  IntroStrengths,
 } from "./components";
 
 export default function IntroductionTestPage() {
@@ -35,6 +36,7 @@ export default function IntroductionTestPage() {
             <IntroEducation />
             <IntroExperience />
             <IntroStacks />
+            <IntroStrengths />
           </div>
         </main>
 

@@ -16,6 +16,33 @@ export default function ProjectTestPage() {
     dispatch(showBar("Home"));
   }, [dispatch]);
 
+  // URL 해시(#project-*)에 따라 초기 탭/스크롤 위치 맞추기
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const hash = window.location.hash;
+    if (hash.startsWith("#project-")) {
+      const projectId = hash.replace("#project-", "");
+
+      const inWork = WORK_PROJECTS.some((p) => p.id === projectId);
+      const inPersonal = PERSONAL_PROJECTS.some((p) => p.id === projectId);
+
+      if (inWork) {
+        setActiveTab("work");
+      } else if (inPersonal) {
+        setActiveTab("personal");
+      }
+
+      // 탭 전환 후 DOM 렌더링을 위해 약간 지연 후 스크롤
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 150);
+    }
+  }, []);
+
   const workProjects = WORK_PROJECTS;
   const personalProjects = PERSONAL_PROJECTS;
 
