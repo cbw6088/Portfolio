@@ -8,7 +8,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     subtitle: "15년 된 워드프레스 기반 브랜드 사이트 리뉴얼 및 백오피스 신규 구축",
     period: "2025.04 - 2025.07 (이후 유지보수 및 콘텐츠 추가)",
     platform: "Web",
-    heroImageUrl: "/Project_Background/Brandsite.png",
+    heroImageUrl: "/Project_Background/brandsite.png",
     role: "Front-End",
     description:
       "약 15년간 워드프레스로 운영되던 보안 기업 브랜드 사이트를 리뉴얼하고, 운영 효율을 위한 백오피스까지 새롭게 구축한 프로젝트입니다.",
