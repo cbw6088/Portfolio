@@ -18,6 +18,8 @@ export interface ProjectItem {
   subtitle: string;
   period: string;
   imageKey?: "quizgen" | "goaldiary" | "lucid" | "nickname";
+  /** 디테일 페이지 상단에 노출할 대표 이미지 */
+  heroImageUrl?: string;
   platform?: string;
   teamSize?: string;
   role?: string;
@@ -33,6 +35,13 @@ export interface ProjectItem {
     responsibilities?: string;
     /** 숫자나 임팩트를 중심으로 한 성과 */
     achievements?: string;
+  };
+  /** 디테일 페이지에서 상황/원인/행동/결과를 정리한 스토리 */
+  detailStory?: {
+    situation: string;
+    analysis: string;
+    action: string;
+    result: string;
   };
 }
 

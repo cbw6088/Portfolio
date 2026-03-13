@@ -96,7 +96,7 @@ export default function ProjectTestPage() {
                 <ul className="space-y-4">
                   {workProjects.map((project) => (
                     <li key={project.id}>
-                      <ProjectCard project={project} />
+                      <ProjectCard project={project} variant="list" />
                     </li>
                   ))}
                 </ul>
@@ -111,7 +111,7 @@ export default function ProjectTestPage() {
                 <ul className="space-y-4">
                   {personalProjects.map((project) => (
                     <li key={project.id}>
-                      <ProjectCard project={project} />
+                      <ProjectCard project={project} variant="list" />
                     </li>
                   ))}
                 </ul>
