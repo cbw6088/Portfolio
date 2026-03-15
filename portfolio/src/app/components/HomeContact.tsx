@@ -46,7 +46,7 @@ export default function HomeContact({
           <a
             key={href}
             href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
+            target={href.startsWith("http") || href === "/pdf" ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="inline-block hover:text-amber-600 hover:-translate-y-0.5 transition-all duration-300 underline underline-offset-2 decoration-stone-300 hover:decoration-amber-500 decoration-2"
           >

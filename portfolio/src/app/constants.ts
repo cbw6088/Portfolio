@@ -1,6 +1,7 @@
 export const HOME_LINKS = [
   { label: "cbw60881@gmail.com", href: "mailto:cbw60881@gmail.com" },
   { label: "GitHub", href: "https://github.com/cbw6088" },
+  { label: "PDF", href: "/pdf" },
 ] as const;
 
 export const HOME_TAGLINE =
