@@ -82,9 +82,9 @@ body {
     -webkit-print-color-adjust: exact;
   }
   .route-pdf .pdf-page {
-    height: 180mm;
-    min-height: 180mm;
-    max-height: 180mm;
+    height: 210mm;
+    min-height: 210mm;
+    max-height: 210mm;
     overflow: hidden;
     page-break-after: always;
     page-break-inside: avoid;
@@ -182,6 +182,6 @@ body {
   }
   @page {
     size: A4 landscape;
-    margin: 15mm;
+    margin: 0;
   }
 }

@@ -25,7 +25,7 @@ const TWO_PAGE_PROJECT_IDS = [
 
 /** PDF 한 페이지 = 가로형 A4 한 장. 웹과 동일한 stone/amber 컨셉 + 공통 토큰 */
 const pageClass =
-  "pdf-page box-border flex flex-col min-h-[180mm]";
+  "pdf-page box-border flex flex-col min-h-[210mm]";
 
 /** 1페이지: 홈 화면 */
 function PdfPage1Home() {
