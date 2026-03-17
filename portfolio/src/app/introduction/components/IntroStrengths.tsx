@@ -38,7 +38,7 @@ export default function IntroStrengths() {
           </div>
           <div className="mt-3 flex justify-start">
             <Link
-              href="/project/work-customer-portal"
+              href="https://portfolio-cbw.vercel.app/project/work-customer-portal"
               className="text-amber-600 hover:text-amber-700 text-sm font-medium underline-offset-2 hover:underline"
             >
               Customer Portal 프로젝트 바로가기 →
@@ -76,7 +76,7 @@ export default function IntroStrengths() {
           </div>
           <div className="mt-3 flex justify-start">
             <Link
-              href="/project/work-brand-renewal"
+              href="https://portfolio-cbw.vercel.app/project/work-brand-renewal"
               className="text-amber-600 hover:text-amber-700 text-sm font-medium underline-offset-2 hover:underline"
             >
               Brand Site 프로젝트 바로가기 →
@@ -114,7 +114,7 @@ export default function IntroStrengths() {
           </div>
           <div className="mt-3 flex justify-start">
             <Link
-              href="/project/quizgen"
+              href="https://portfolio-cbw.vercel.app/project/quizgen"
               className="text-amber-600 hover:text-amber-700 text-sm font-medium underline-offset-2 hover:underline"
             >
               QuizGen 프로젝트 바로가기 →
