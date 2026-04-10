@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
 import { useDispatch } from "react-redux";
@@ -71,6 +72,7 @@ export default function StudyPostPage() {
               {!loading && !error && content !== null && (
                 <div className="mt-6 study-markdown">
                   <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
                     components={{
                       h1: ({ children }) => (
                         <h1 className="text-xl font-semibold text-stone-800 mt-8 mb-3 first:mt-0">
@@ -101,6 +103,32 @@ export default function StudyPostPage() {
                         <ul className="list-disc list-inside text-stone-600 text-sm my-3 space-y-1">
                           {children}
                         </ul>
+                      ),
+                      table: ({ children }) => (
+                        <div className="my-4 overflow-x-auto">
+                          <table className="min-w-full text-sm text-left border border-stone-200 rounded-md overflow-hidden">
+                            {children}
+                          </table>
+                        </div>
+                      ),
+                      thead: ({ children }) => (
+                        <thead className="bg-stone-100 text-stone-700">
+                          {children}
+                        </thead>
+                      ),
+                      tbody: ({ children }) => (
+                        <tbody className="text-stone-600">{children}</tbody>
+                      ),
+                      tr: ({ children }) => (
+                        <tr className="border-b border-stone-200 last:border-b-0">
+                          {children}
+                        </tr>
+                      ),
+                      th: ({ children }) => (
+                        <th className="px-3 py-2 font-semibold">{children}</th>
+                      ),
+                      td: ({ children }) => (
+                        <td className="px-3 py-2 align-top">{children}</td>
                       ),
                       ol: ({ children }) => (
                         <ol className="list-decimal list-inside text-stone-600 text-sm my-3 space-y-1">
