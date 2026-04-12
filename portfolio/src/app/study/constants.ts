@@ -21,6 +21,13 @@ export interface StudyPost {
 
 /** Study/YYYY/*.md 스터디 글 목록 (날짜 최신순). categoryId: frontend | backend | infra | seo | security | certificate | hobby */
 export const STUDY_POSTS: StudyPost[] = [
+  {
+    id: "2026-04-12",
+    categoryId: "certificate",
+    title: "[정처기] 데이터베이스 구축 핵심 정리",
+    date: "2026-04-12",
+    slug: "2026-04-12",
+  },
   { id: "2026-04-11", categoryId: "certificate", title: "[정처기] 소프트웨어 개발 핵심 정리", date: "2026-04-11", slug: "2026-04-11" },
   { id: "2026-04-10", categoryId: "certificate", title: "[정처기] 소프트웨어 설계 핵심 정리", date: "2026-04-10", slug: "2026-04-10" },
   { id: "2025-11-10", categoryId: "backend", title: "SQL 기초와 활용", date: "2025-11-10", slug: "2025-11-10" },
