@@ -21,6 +21,7 @@ export interface StudyPost {
 
 /** Study/YYYY/*.md 스터디 글 목록 (날짜 최신순). categoryId: frontend | backend | infra | seo | security | certificate | hobby */
 export const STUDY_POSTS: StudyPost[] = [
+  { id: "2026-06-18", categoryId: "certificate", title: "[정처기 실기] 2. 데이터베이스 구축", date: "2026-06-18", slug: "2026-06-18" },
   { id: "2026-06-17", categoryId: "certificate", title: "[정처기 실기] 1. 소프트웨어 구축", date: "2026-06-17", slug: "2026-06-17" },
   { id: "2026-04-28", categoryId: "frontend", title: "로고를 이용한 로딩 모션 적용 정리", date: "2026-04-28", slug: "2026-04-28" },
   { id: "2026-04-20", categoryId: "security", title: "[MOP] 다양한 구성 방식", date: "2026-04-20", slug: "2026-04-20" },
