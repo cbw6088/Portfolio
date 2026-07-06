@@ -160,6 +160,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     subtitle: "월간 뉴스레터, 웹 공격 동향 보고서, 행사 eDM 제작 및 발송",
     period: "2025.01 - 현재",
     platform: "Email",
+    heroImageUrl: "/Project_Background/eDM.png",
     role: "Email 퍼블리싱 / 마케팅 협업",
     description:
       "월간 뉴스레터, 웹 공격 동향 보고서, 각종 행사 안내 등 약 15,000명 대상의 eDM을 HTML 기반으로 제작·관리하고 있습니다.",
