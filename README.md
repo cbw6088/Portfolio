@@ -7,6 +7,7 @@ React와 TypeScript 기반으로 사용자 경험과 웹 성능 최적화에 집
 
 - **GitHub**: [github.com/cbw6088](https://github.com/cbw6088)
 - **Email**: cbw60881@gmail.com
+- **Portfolio**: https://portfolio-cbw.vercel.app/
 
 ---
 
