@@ -174,6 +174,13 @@ export default function StudyPostPage() {
                           {children}
                         </strong>
                       ),
+                      img: ({ src, alt }) => (
+                        <img
+                          src={src}
+                          alt={alt ?? ""}
+                          className="my-4 w-full rounded-lg border border-stone-200"
+                        />
+                      ),
                     }}
                   >
                     {content}
