@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/redux/store";
 import { setCurrentPage } from "@/feature/button/SideButtonSlice";
 import { useRouter, usePathname } from "next/navigation";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const pageLabels = ["Portfolio", "Introduction", "Project", "Study"];
 const pageRoutes = ["/", "/introduction", "/project", "/study"];
@@ -60,7 +61,7 @@ export default function SideButtonTest() {
 
   return (
     <nav
-      className={`hidden md:flex fixed right-0 top-0 bottom-0 flex-col justify-center overflow-hidden border-l border-stone-200/80 bg-stone-50/90 backdrop-blur-sm transition-[width] duration-300 ease-out ${
+      className={`hidden md:flex fixed right-0 top-0 bottom-0 flex-col overflow-hidden border-l border-stone-200/80 bg-stone-50/90 backdrop-blur-sm transition-[width] duration-300 ease-out dark:border-stone-700/80 dark:bg-stone-950/90 ${
         hovered ? "w-44" : "w-14"
       }`}
       onMouseEnter={() => setHovered(true)}
@@ -68,7 +69,11 @@ export default function SideButtonTest() {
       style={{ zIndex: 1000 }}
       aria-label="페이지 네비게이션"
     >
-      <div className="flex flex-col justify-center items-end gap-5 pr-3 min-w-0">
+      <div className="flex shrink-0 justify-end pr-3 pt-4 min-w-0">
+        <ThemeToggle showLabel labelVisible={hovered} />
+      </div>
+
+      <div className="flex flex-1 flex-col justify-center items-end gap-5 pr-3 min-w-0 pb-4">
         {pageLabels.map((label, index) => {
           const isActive = currentPage === index;
           return (
@@ -77,19 +82,11 @@ export default function SideButtonTest() {
               className="group flex items-center gap-3 min-w-0"
             >
               <span
-                role="button"
-                tabIndex={0}
-                onClick={() => handleClick(index)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    handleClick(index);
-                  }
-                }}
-                className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out cursor-pointer ${
+                aria-hidden={!hovered}
+                className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out pointer-events-none ${
                   hovered
                     ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-2 pointer-events-none"
+                    : "opacity-0 translate-x-2"
                 } ${
                   isActive
                     ? "text-amber-600"
@@ -101,7 +98,7 @@ export default function SideButtonTest() {
               <button
                 type="button"
                 onClick={() => handleClick(index)}
-                className="relative flex shrink-0 items-center justify-center w-10 h-10 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2"
+                className="relative flex shrink-0 items-center justify-center w-10 h-10 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-stone-950"
                 aria-label={`${label} 페이지로 이동`}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -109,7 +106,7 @@ export default function SideButtonTest() {
                   className={`block rounded-full transition-all duration-300 ease-out ${
                     isActive
                       ? "w-2.5 h-2.5 bg-amber-600 shadow-[0_0_0_2px_rgba(217,119,6,0.2)]"
-                      : "w-2 h-2 border-2 border-stone-400 group-hover:border-amber-500/70 group-hover:scale-110"
+                      : "w-2 h-2 border-2 border-stone-400 group-hover:border-amber-500/70 group-hover:scale-110 dark:border-stone-500"
                   }`}
                 />
               </button>
@@ -120,4 +117,3 @@ export default function SideButtonTest() {
     </nav>
   );
 }
-

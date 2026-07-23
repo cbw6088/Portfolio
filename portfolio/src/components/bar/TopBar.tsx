@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/redux/store";
 import { useRouter, usePathname } from "next/navigation";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const TopBar = () => {
   const router = useRouter();
@@ -19,7 +20,6 @@ const TopBar = () => {
     if (!scrollEl) return;
 
     const handleScroll = () => {
-      // 데스크톱 이상에서는 항상 보이도록
       if (window.innerWidth >= 640) {
         setShowOnMobile(true);
         return;
@@ -55,72 +55,61 @@ const TopBar = () => {
     };
   }, []);
 
-  const handleHomeClick = () => {
-    router.push("/");
-  };
-  const handleIntroductionClick = () => {
-    router.push("/introduction");
-  };
-  const handleProjectClick = () => {
-    router.push("/project");
-  };
-  const handleStudyClick = () => {
-    router.push("/study");
-  };
+  const navClass = (href: string) =>
+    `px-1.5 sm:px-2 text-[11px] sm:text-sm font-LilitaOne tracking-wider ${
+      pathname === href
+        ? "text-amber-600"
+        : "text-stone-700 dark:text-stone-300"
+    }`;
 
   if (!isVisible || !barType) return null;
-
-  const renderButtons = () => {
-    return (
-      <div className="flex items-center justify-between px-4 py-2">
-        <button
-          className={`px-2 text-sm font-LilitaOne tracking-wider ${
-            pathname === "/" ? "text-amber-600" : "text-stone-700"
-          }`}
-          onClick={handleHomeClick}
-        >
-          PORTFOLIO
-        </button>
-        <button
-          className={`px-2 text-sm font-LilitaOne tracking-wider ${
-            pathname === "/introduction" ? "text-amber-600" : "text-stone-700"
-          }`}
-          onClick={handleIntroductionClick}
-        >
-          INTRODUCTION
-        </button>
-        <button
-          className={`px-2 text-sm font-LilitaOne tracking-wider ${
-            pathname === "/project" ? "text-amber-600" : "text-stone-700"
-          }`}
-          onClick={handleProjectClick}
-        >
-          PROJECT
-        </button>
-        <button
-          className={`px-2 text-sm font-LilitaOne tracking-wider ${
-            pathname === "/study" ? "text-amber-600" : "text-stone-700"
-          }`}
-          onClick={handleStudyClick}
-        >
-          STUDY
-        </button>
-      </div>
-    );
-  };
 
   return (
     <div
       className={`block sm:hidden fixed top-2 left-0 w-full py-2 z-50 transition-opacity duration-300 ${
-        showOnMobile ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        showOnMobile
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="mx-3 rounded-full bg-stone-50/85 backdrop-blur-sm shadow-sm">
-        {renderButtons()}
+      <div className="mx-3 rounded-full bg-stone-50/85 backdrop-blur-sm shadow-sm dark:bg-stone-900/85 dark:shadow-stone-950/40">
+        <div className="flex items-center gap-0.5 px-2 py-1.5">
+          <div className="flex min-w-0 flex-1 items-center justify-between">
+            <button
+              type="button"
+              className={navClass("/")}
+              onClick={() => router.push("/")}
+            >
+              PORTFOLIO
+            </button>
+            <button
+              type="button"
+              className={navClass("/introduction")}
+              onClick={() => router.push("/introduction")}
+            >
+              INTRODUCTION
+            </button>
+            <button
+              type="button"
+              className={navClass("/project")}
+              onClick={() => router.push("/project")}
+            >
+              PROJECT
+            </button>
+            <button
+              type="button"
+              className={navClass("/study")}
+              onClick={() => router.push("/study")}
+            >
+              STUDY
+            </button>
+          </div>
+          <div className="ml-1 h-4 w-px shrink-0 bg-stone-300/80 dark:bg-stone-600" />
+          <ThemeToggle className="ml-0.5" />
+        </div>
       </div>
     </div>
   );
 };
 
 export default TopBar;
-

@@ -1,8 +1,8 @@
 export default function HomeBackground() {
   return (
     <>
-      <div
-        className="fixed inset-0 pointer-events-none"
+          <div
+        className="fixed inset-0 pointer-events-none dark:opacity-80"
         aria-hidden
         style={{
           background:
@@ -11,7 +11,7 @@ export default function HomeBackground() {
       />
       {/* 느리게 움직이는 포인트 그라데이션 */}
       <div
-        className="fixed inset-0 pointer-events-none opacity-70 animate-gradientMove"
+        className="fixed inset-0 pointer-events-none opacity-70 animate-gradientMove dark:opacity-50"
         aria-hidden
         style={{
           background:

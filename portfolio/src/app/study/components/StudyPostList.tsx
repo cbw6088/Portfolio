@@ -15,11 +15,11 @@ export default function StudyPostList({
   if (posts.length === 0) {
     return (
       <div className="py-12 text-center">
-        <p className="text-stone-500 text-sm">
-          <span className="font-medium text-stone-600">{categoryLabel}</span>에
+        <p className="text-stone-500 text-sm dark:text-stone-400">
+          <span className="font-medium text-stone-600 dark:text-stone-300">{categoryLabel}</span>에
           아직 올린 글이 없습니다.
         </p>
-        <p className="text-stone-400 text-xs mt-1">
+        <p className="text-stone-400 text-xs mt-1 dark:text-stone-500">
           곧 공부한 내용을 정리해서 올릴 예정입니다.
         </p>
       </div>

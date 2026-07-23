@@ -14,7 +14,7 @@ export default function StudyCategoryNav({
 }: StudyCategoryNavProps) {
   return (
     <nav
-      className="flex flex-wrap gap-2 sm:gap-3 border-b border-stone-200 pb-4"
+      className="flex flex-wrap gap-2 sm:gap-3 border-b border-stone-200 pb-4 dark:border-stone-800"
       aria-label="목차"
     >
       {STUDY_CATEGORIES.map(({ id, label }) => (
@@ -25,7 +25,7 @@ export default function StudyCategoryNav({
           className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
             current === id
               ? "bg-amber-600 text-white shadow-sm"
-              : "bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-800"
+              : "bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-800 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700 dark:hover:text-stone-100"
           }`}
           aria-current={current === id ? "true" : undefined}
         >

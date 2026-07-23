@@ -11,12 +11,12 @@ import {
 
 export default function IntroProfile() {
   return (
-    <section className="pt-8 pb-12 border-b border-stone-200">
+    <section id="profile" className="pt-8 pb-12 border-b border-stone-200 dark:border-stone-800">
       <div className="flex flex-col items-center">
         <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 flex items-center justify-center">
           {/* 테두리만 있는 사각형 - z축 뒤, 사진과 동일 높이·약간 좌측 */}
           <div
-            className="absolute w-[85%] h-[85%] border-2 border-stone-400 bg-transparent pointer-events-none rotate-45 z-0"
+            className="absolute w-[85%] h-[85%] border-2 border-stone-400 bg-transparent pointer-events-none rotate-45 z-0 dark:border-stone-500"
             style={{ left: "2%", top: "7.5%", aspectRatio: "1" }}
           />
           {/* 사진: 다이아몬드(45도 회전한 사각형), 앞에 배치 */}
@@ -40,7 +40,7 @@ export default function IntroProfile() {
             </div>
           </div>
         </div>
-        <h1 className="mt-6 font-semibold text-xl sm:text-2xl text-stone-800">
+        <h1 className="mt-6 font-semibold text-xl sm:text-2xl text-stone-800 dark:text-stone-100">
           {INTRO_NAME}
         </h1>
         <p className="text-amber-600 text-sm sm:text-base font-medium mt-0.5">
@@ -48,7 +48,7 @@ export default function IntroProfile() {
         </p>
         <div className="mt-6 space-y-2 max-w-lg text-center">
           {INTRO_DESCRIPTION.map((line, i) => (
-            <p key={i} className="text-stone-600 text-sm leading-relaxed">
+            <p key={i} className="text-stone-600 text-sm leading-relaxed dark:text-stone-300">
               {line}
             </p>
           ))}
@@ -60,7 +60,7 @@ export default function IntroProfile() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="text-amber-600 hover:text-amber-700 hover:underline underline-offset-2"
+              className="text-amber-600 hover:text-amber-700 hover:underline underline-offset-2 dark:hover:text-amber-400"
             >
               {label}
             </a>
