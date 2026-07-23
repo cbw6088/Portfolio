@@ -23,14 +23,13 @@ export const INTRO_EDUCATION = [
 ] as const;
 
 export const INTRO_EXPERIENCES = [
-  { period: "2025.01 - 현재", name: "(주)모니터랩", detail: "프론트엔드 개발자" },
+  { period: "2025.01 - 2026.07", name: "(주)모니터랩", detail: "프론트엔드 개발자" },
 ] as const;
 
 export const INTRO_STACK_BADGES = [
   "https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white",
   "https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white",
   "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-  "https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white",
   "https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black",
   "https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=black",
   "https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white",
