@@ -46,9 +46,12 @@ export default function IntroProfile() {
         <p className="text-amber-600 text-sm sm:text-base font-medium mt-0.5">
           {INTRO_ROLE}
         </p>
-        <div className="mt-6 space-y-2 max-w-lg text-center">
+        <div className="mt-6 space-y-2 max-w-xl text-center">
           {INTRO_DESCRIPTION.map((line, i) => (
-            <p key={i} className="text-stone-600 text-sm leading-relaxed dark:text-stone-300">
+            <p
+              key={i}
+              className="text-stone-600 text-sm leading-relaxed break-keep text-pretty dark:text-stone-300"
+            >
               {line}
             </p>
           ))}

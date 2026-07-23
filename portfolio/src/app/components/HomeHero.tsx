@@ -37,7 +37,7 @@ export default function HomeHero({ mounted, tagline }: HomeHeroProps) {
       </h1>
 
       <p
-        className={`text-stone-600 text-sm sm:text-base max-w-md mx-auto dark:text-stone-300 ${transition} ${
+        className={`text-stone-600 text-sm sm:text-base max-w-lg mx-auto break-keep text-pretty dark:text-stone-300 ${transition} ${
           mounted ? "translate-y-0" : "translate-y-2"
         }`}
         style={{ transitionDelay: "450ms" }}

@@ -2,12 +2,9 @@ export const INTRO_NAME = "Choi Byungwoo";
 export const INTRO_ROLE = "Frontend Developer";
 
 export const INTRO_DESCRIPTION = [
-  "성능 최적화에 강점을 가진 React와 TypeScript 기반의 프론트엔드 개발자입니다.",
-  "사용자 경험(UX)을 최우선으로 고려한 UI 구현에 열정을 가지고 있으며,",
-  "성능 개선을 통해 웹 애플리케이션의 최적화를 추구합니다.",
-  "협업을 통해 문제를 해결하고, 효율적인 코드 리뷰와 소통을 중시합니다.",
-  "회사에서 사용하는 기술을 빠르고 정확하게 학습하여",
-  "실무에 적용함으로써 프로젝트에 기여하겠습니다.",
+  "React·TypeScript·Next.js로 UI를 설계하고 구현하는 프론트엔드 개발자입니다.",
+  "보이는 UI에 더해, 로딩·검색·사용 흐름까지 함께 다듬는 쪽을 선호합니다.",
+  "협업과 코드 리뷰로 빠르게 배우고, 서비스에 바로 적용하는 것을 중요하게 생각합니다.",
 ];
 
 export const INTRO_CONTACTS = [
@@ -44,7 +41,6 @@ export const INTRO_STACK_BADGES = [
   { label: "CSS", src: "https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" },
   { label: "JavaScript", src: "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" },
   { label: "React", src: "https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" },
-  { label: "React Native", src: "https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=black" },
   { label: "Next.js", src: "https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" },
   { label: "Styled Components", src: "https://img.shields.io/badge/Styled--Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" },
   { label: "Tailwind CSS", src: "https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" },
