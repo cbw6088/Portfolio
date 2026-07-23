@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/redux/store";
 import { setCurrentPage } from "@/feature/button/SideButtonSlice";
@@ -16,6 +16,7 @@ export default function SideButtonTest() {
   const dispatch = useDispatch();
   const currentPage = useSelector((state: RootState) => state.button.currentPage);
   const [hovered, setHovered] = useState(false);
+  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const saveScrollPosition = () => {
     if (typeof window === "undefined") return;
@@ -42,6 +43,9 @@ export default function SideButtonTest() {
   useEffect(() => {
     restoreScrollPosition();
     restoreCurrentPage();
+    return () => {
+      if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -59,13 +63,29 @@ export default function SideButtonTest() {
     router.push(pageRoutes[index]);
   };
 
+  const handleMouseEnter = () => {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    // 클릭 중 살짝 벗어나도 바로 접히지 않도록
+    leaveTimerRef.current = setTimeout(() => {
+      setHovered(false);
+      leaveTimerRef.current = null;
+    }, 120);
+  };
+
   return (
     <nav
       className={`hidden md:flex fixed right-0 top-0 bottom-0 flex-col overflow-hidden border-l border-stone-200/80 bg-stone-50/90 backdrop-blur-sm transition-[width] duration-300 ease-out dark:border-stone-700/80 dark:bg-stone-950/90 ${
         hovered ? "w-44" : "w-14"
       }`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{ zIndex: 1000 }}
       aria-label="페이지 네비게이션"
     >
@@ -77,16 +97,19 @@ export default function SideButtonTest() {
         {pageLabels.map((label, index) => {
           const isActive = currentPage === index;
           return (
-            <div
+            <button
               key={index}
-              className="group flex items-center gap-3 min-w-0"
+              type="button"
+              onClick={() => handleClick(index)}
+              className="group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-stone-950"
+              aria-label={`${label} 페이지로 이동`}
+              aria-current={isActive ? "page" : undefined}
             >
               <span
-                aria-hidden={!hovered}
-                className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out pointer-events-none ${
+                className={`absolute right-full mr-3 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out ${
                   hovered
                     ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-2"
+                    : "opacity-0 translate-x-2 pointer-events-none"
                 } ${
                   isActive
                     ? "text-amber-600"
@@ -95,22 +118,14 @@ export default function SideButtonTest() {
               >
                 {label}
               </span>
-              <button
-                type="button"
-                onClick={() => handleClick(index)}
-                className="relative flex shrink-0 items-center justify-center w-10 h-10 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-stone-950"
-                aria-label={`${label} 페이지로 이동`}
-                aria-current={isActive ? "page" : undefined}
-              >
-                <span
-                  className={`block rounded-full transition-all duration-300 ease-out ${
-                    isActive
-                      ? "w-2.5 h-2.5 bg-amber-600 shadow-[0_0_0_2px_rgba(217,119,6,0.2)]"
-                      : "w-2 h-2 border-2 border-stone-400 group-hover:border-amber-500/70 group-hover:scale-110 dark:border-stone-500"
-                  }`}
-                />
-              </button>
-            </div>
+              <span
+                className={`block rounded-full transition-all duration-300 ease-out ${
+                  isActive
+                    ? "w-2.5 h-2.5 bg-amber-600 shadow-[0_0_0_2px_rgba(217,119,6,0.2)]"
+                    : "w-2 h-2 border-2 border-stone-400 group-hover:border-amber-500/70 group-hover:scale-110 dark:border-stone-500"
+                }`}
+              />
+            </button>
           );
         })}
       </div>

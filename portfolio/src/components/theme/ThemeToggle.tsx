@@ -88,12 +88,12 @@ export default function ThemeToggle({
       <button
         type="button"
         onClick={handleToggle}
-        className={`group flex items-center justify-end gap-3 min-w-0 text-stone-500 transition-colors hover:text-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-amber-400 dark:focus-visible:ring-offset-stone-950 ${className}`}
+        className={`group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-200/70 hover:text-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-amber-400 dark:focus-visible:ring-offset-stone-950 ${className}`}
         aria-label={ariaLabel}
         title={ariaLabel}
       >
         <span
-          className={`shrink-0 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out ${
+          className={`absolute right-full mr-3 text-s font-medium whitespace-nowrap transition-all duration-300 ease-out ${
             labelVisible
               ? "opacity-100 translate-x-0"
               : "opacity-0 translate-x-2 pointer-events-none"
@@ -101,9 +101,7 @@ export default function ThemeToggle({
         >
           {mounted ? nextLabel : "Dark"}
         </span>
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors group-hover:bg-stone-200/70 dark:group-hover:bg-stone-800">
-          {icon}
-        </span>
+        {icon}
       </button>
     );
   }
