@@ -175,7 +175,13 @@ export function getTechStackCounts(limit = 8): NamedCount[] {
 
   return [...counts.entries()]
     .map(([name, value]) => ({ name, value }))
-    .sort((a, b) => b.value - a.value || a.name.localeCompare(b.name))
+    .sort((a, b) => {
+      if (b.value !== a.value) return b.value - a.value;
+      // 동일 횟수면 React 우선
+      if (a.name === "React") return -1;
+      if (b.name === "React") return 1;
+      return a.name.localeCompare(b.name);
+    })
     .slice(0, limit);
 }
 
