@@ -74,7 +74,7 @@ const TopBar = () => {
     >
       <div className="mx-3 rounded-full bg-stone-50/85 backdrop-blur-sm shadow-sm dark:bg-stone-900/85 dark:shadow-stone-950/40">
         <div className="flex items-center gap-0.5 px-2 py-1.5">
-          <div className="flex min-w-0 flex-1 items-center justify-between">
+          <div className="flex min-w-0 flex-1 items-center justify-between gap-0.5 overflow-x-auto">
             <button
               type="button"
               className={navClass("/")}
@@ -87,7 +87,7 @@ const TopBar = () => {
               className={navClass("/introduction")}
               onClick={() => router.push("/introduction")}
             >
-              INTRODUCTION
+              INTRO
             </button>
             <button
               type="button"
@@ -102,6 +102,13 @@ const TopBar = () => {
               onClick={() => router.push("/study")}
             >
               STUDY
+            </button>
+            <button
+              type="button"
+              className={navClass("/insights")}
+              onClick={() => router.push("/insights")}
+            >
+              INSIGHTS
             </button>
           </div>
           <div className="ml-1 h-4 w-px shrink-0 bg-stone-300/80 dark:bg-stone-600" />
