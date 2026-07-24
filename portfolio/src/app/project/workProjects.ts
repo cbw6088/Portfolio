@@ -11,7 +11,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     heroImageUrl: "/Project_Background/brandsite.png",
     role: "Front-End",
     description:
-      "약 15년간 워드프레스로 운영되던 보안 기업 브랜드 사이트를 리뉴얼하고, 운영 효율을 위한 백오피스까지 새롭게 구축한 프로젝트입니다.",
+      "10년 이상 워드프레스로 운영되던 보안 기업 브랜드 사이트를 리뉴얼하고, 운영 효율을 위한 백오피스까지 새롭게 구축한 프로젝트입니다.",
     tech: {
       language: "TypeScript (FE), Java (BE)",
       framework: "Next.js",
@@ -107,7 +107,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     type: "work",
     title: "사내 웹사이트 유지보수 및 운영",
     subtitle: "워드프레스 기반 사내/서비스 웹사이트 다수의 유지보수 및 개선",
-    period: "2025.01 - 현재",
+    period: "2025.01 - 2026.07",
     platform: "Web",
     heroImageUrl: "/Project_Background/aiworks.png",
     role: "Front-End",
@@ -158,7 +158,7 @@ export const WORK_PROJECTS: ProjectItem[] = [
     type: "work",
     title: "뉴스레터 및 행사 eDM 제작",
     subtitle: "월간 뉴스레터, 웹 공격 동향 보고서, 행사 eDM 제작 및 발송",
-    period: "2025.01 - 현재",
+    period: "2025.01 - 2026.07",
     platform: "Email",
     heroImageUrl: "/Project_Background/eDM.png",
     role: "Email 퍼블리싱 / 마케팅 협업",

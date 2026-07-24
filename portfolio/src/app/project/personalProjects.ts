@@ -64,6 +64,7 @@ export const PERSONAL_PROJECTS: ProjectItem[] = [
     platform: "Web",
     teamSize: "FE 2명, BE 5명, 기획 2명, 디자인 4명",
     role: "Front-End(BackOffice)",
+    description: "비대면 의료 플랫폼의 백오피스 화면을 담당해 운영·관리 UI를 구현한 프로젝트입니다.",
     tech: {
       language: "TypeScript",
       framework: "ReactNative, Next.js, SpringBoot",
@@ -80,6 +81,7 @@ export const PERSONAL_PROJECTS: ProjectItem[] = [
     platform: "Web",
     teamSize: "FE 1명, AI 1명",
     role: "Front-End",
+    description: "랜덤 닉네임을 생성하는 오픈 API를 프론트엔드에서 연동·검증한 단기 프로젝트입니다.",
     tech: {
       language: "TypeScript",
       library: "React",

@@ -35,149 +35,757 @@ body {
   }
 }
 
-/* PDF 전용: 깔끔한 레이아웃. 컨셉은 폰트·색상(stone/amber)만 유지, 테두리/좌측선 없음 */
+/* ========== PDF Portfolio (가로 A4 전용) ========== */
+.route-pdf {
+  color: #292524;
+}
+
+.route-pdf .pdf-preview-stage {
+  padding: 28px 16px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.route-pdf .pdf-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
 .route-pdf .pdf-page {
-  background-color: #fafaf9; /* stone-50 */
-  color: #292524; /* stone-800 */
+  width: min(297mm, calc(100vw - 32px));
+  aspect-ratio: 297 / 210;
+  height: auto;
+  max-width: 100%;
   box-sizing: border-box;
+  background: #fff;
+  color: #292524;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(28, 25, 23, 0.12);
+  border: 1px solid #e7e5e4;
 }
 
-/* PDF 콘텐츠 너비: 넓게 사용 (내용이 길어도 여유 있게) */
-.route-pdf .pdf-page-inner {
-  width: 100%;
-  max-width: 56rem; /* 화면에서 넓게 */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* PDF 공통: 라벨(폰트·색상만) */
-.route-pdf .pdf-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+.route-pdf .pdf-chrome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10mm 12mm 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #78716c; /* stone-500 */
-}
-
-/* PDF 블록: 테두리/선 없이 여백만 (카드 스타일 제거) */
-.route-pdf .pdf-block {
-  margin-bottom: 0.75rem;
-}
-
-/* 페이지 연결감: 루트 제외 PDF 페이지 상단 라벨만 (테두리/선 없음). 좌우 여백은 인트로와 동일하게 */
-.route-pdf .pdf-page .pdf-page-header {
-  padding: 2px 1rem 0;
-  margin-bottom: 6px;
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
   color: #a8a29e;
+}
+
+.route-pdf .pdf-chrome-footer {
+  padding: 0 12mm 8mm;
+  margin-top: auto;
+}
+
+.route-pdf .pdf-chrome-brand {
+  color: #78716c;
+}
+
+.route-pdf .pdf-chrome-section {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.route-pdf .pdf-body {
+  flex: 1;
+  min-height: 0;
+  padding: 14mm 12mm 4mm;
+  overflow: hidden;
+}
+
+.route-pdf .pdf-body-bare {
+  padding: 0;
+}
+
+.route-pdf .pdf-kicker,
+.route-pdf .pdf-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d97706;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.route-pdf .pdf-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: #1c1917;
+}
+
+.route-pdf .pdf-subhead {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #78716c;
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.route-pdf .pdf-lead {
+  font-size: 14px;
+  color: #57534e;
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+
+.route-pdf .pdf-block {
+  margin-bottom: 12px;
+}
+
+.route-pdf .pdf-block p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #44403c;
+  margin: 0;
+}
+
+/* Cover — 표지 폰트는 유지 */
+.route-pdf .pdf-cover {
+  height: 100%;
+  display: flex;
+  position: relative;
+  background: linear-gradient(135deg, #fafaf9 0%, #fff 55%, #fff7ed 100%);
+}
+
+.route-pdf .pdf-cover-accent {
+  width: 10mm;
+  background: #d97706;
+}
+
+.route-pdf .pdf-cover-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18mm 20mm;
+}
+
+.route-pdf .pdf-cover .pdf-kicker {
+  font-size: 10px;
+}
+
+.route-pdf .pdf-cover-title {
+  font-family: "Lilita One", cursive;
+  font-size: 48px;
+  line-height: 1.05;
+  color: #1c1917;
+  margin: 8px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.route-pdf .pdf-cover-title-accent {
+  display: block;
+  color: #d97706;
+}
+
+.route-pdf .pdf-cover-tagline {
+  margin-top: 14px;
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #57534e;
+}
+
+.route-pdf .pdf-cover-rule {
+  width: 48px;
+  height: 1px;
+  background: #d6d3d1;
+  margin: 18px 0;
+}
+
+.route-pdf .pdf-cover-name {
+  font-family: "Lilita One", cursive;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  color: #44403c;
+  margin: 0;
+}
+
+.route-pdf .pdf-cover-role {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.route-pdf .pdf-cover-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 11px;
+  color: #57534e;
+}
+
+.route-pdf .pdf-cover-contacts a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.route-pdf .pdf-cover-site {
+  margin: 16px 0 0;
+  font-size: 11px;
+  color: #78716c;
+  line-height: 1.5;
+}
+
+.route-pdf .pdf-cover-site a {
+  color: #d97706;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.route-pdf .pdf-cover-subname {
+  margin-top: 28px;
+  font-size: 11px;
+  color: #a8a29e;
+}
+
+/* TOC */
+.route-pdf .pdf-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 22px;
+}
+
+.route-pdf .pdf-toc-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f4;
+  font-size: 16px;
+}
+
+.route-pdf .pdf-toc-label {
+  font-weight: 600;
+  color: #1c1917;
+  white-space: nowrap;
+}
+
+.route-pdf .pdf-toc-dots {
+  flex: 1;
+  border-bottom: 1px dotted #d6d3d1;
+  transform: translateY(-4px);
+}
+
+.route-pdf .pdf-toc-page {
+  font-variant-numeric: tabular-nums;
+  color: #d97706;
+  font-weight: 700;
+}
+
+.route-pdf .pdf-toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.route-pdf .pdf-toc-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.route-pdf .pdf-toc-grid li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 13.5px;
+  color: #44403c;
+  border-bottom: 1px solid #f5f5f4;
+}
+
+.route-pdf .pdf-toc-page-muted {
+  color: #a8a29e;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* Intro */
+.route-pdf .pdf-intro {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 14mm;
+  row-gap: 0;
+  height: 100%;
+  align-items: start;
+}
+
+.route-pdf .pdf-intro-photo {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  width: 50mm;
+  height: 50mm;
+  background: transparent;
+  align-self: center;
+  overflow: visible;
+}
+
+/* 45도 회전 시 왼쪽 꼭짓점이 컨테이너 좌측(이름 라인)에 오도록 배치 */
+.route-pdf .pdf-intro-photo-frame {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  left: calc(85% * 0.2071 - 4%);
+  top: 7.5%;
+  border: 1.5px solid #a8a29e;
+  background: transparent;
+  transform: rotate(45deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.route-pdf .pdf-intro-photo-clip {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  left: calc(85% * 0.2071);
+  top: 7.5%;
+  overflow: hidden;
+  background: transparent;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.route-pdf .pdf-intro-photo-inner {
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
+  background: transparent;
+  transform: rotate(-45deg) scale(1.5);
+}
+
+.route-pdf .pdf-intro-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+  display: block;
+}
+
+.route-pdf .pdf-intro-about {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-height: 50mm;
+  align-self: center;
+}
+
+.route-pdf .pdf-intro-about p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #44403c;
+  margin: 0;
+}
+
+.route-pdf .pdf-intro-identity {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.route-pdf .pdf-intro-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.route-pdf .pdf-intro-role {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.route-pdf .pdf-intro-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #57534e;
+  line-height: 1.7;
+}
+
+.route-pdf .pdf-intro-meta {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.route-pdf .pdf-stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.route-pdf .pdf-stack-list li {
+  font-size: 12px;
+  padding: 3px 8px;
+  border: 1px solid #e7e5e4;
+  border-radius: 999px;
+  color: #44403c;
+  background: #fafaf9;
+}
+
+.route-pdf .pdf-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.route-pdf .pdf-timeline li {
+  display: grid;
+  grid-template-columns: 42mm 1fr;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #f5f5f4;
+}
+
+.route-pdf .pdf-timeline-period {
+  color: #78716c;
+}
+
+.route-pdf .pdf-timeline-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  color: #44403c;
+}
+
+.route-pdf .pdf-timeline-body strong {
+  color: #1c1917;
+  font-weight: 600;
+}
+
+/* Project list */
+/* Project list */
+.route-pdf .pdf-project-overview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.route-pdf .pdf-project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12mm;
+  row-gap: 8mm;
+  align-content: start;
+}
+
+.route-pdf .pdf-project-list li {
+  padding: 10px 0 12px;
+  border-bottom: 1px solid #f5f5f4;
+}
+
+.route-pdf .pdf-project-list-title {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.route-pdf .pdf-project-list-sub {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #57534e;
+  line-height: 1.45;
+}
+
+.route-pdf .pdf-project-list-blurb {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #44403c;
+  line-height: 1.5;
+}
+
+.route-pdf .pdf-project-list-meta {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 12px;
+  color: #a8a29e;
+}
+
+.route-pdf .pdf-project-list-tech {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  color: #78716c;
+  line-height: 1.4;
+}
+
+/* Project detail */
+.route-pdf .pdf-detail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.route-pdf .pdf-page:has(.pdf-detail) .pdf-body {
+  /* 프로젝트 상단 여백을 조금 줄여 본문을 위로 */
+  padding-top: 10mm;
+}
+
+.route-pdf .pdf-detail-top {
+  margin-bottom: 4mm;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.route-pdf .pdf-detail-top .pdf-eyebrow {
+  margin-bottom: 8px;
+}
+
+.route-pdf .pdf-detail-title {
+  margin: 2px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1c1917;
+  letter-spacing: -0.02em;
+}
+
+.route-pdf .pdf-detail-sub {
+  margin: 4px 0 0;
+  padding-bottom: 6mm;
+  font-size: 14px;
+  color: #57534e;
+  line-height: 1.45;
+}
+
+.route-pdf .pdf-meta.pdf-meta-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  max-width: 120mm;
+}
+
+.route-pdf .pdf-meta-inline .pdf-meta-row {
+  display: grid;
+  grid-template-columns: 20mm 1fr;
+  gap: 8px;
+  padding: 1px 0;
+}
+
+.route-pdf .pdf-meta-inline .pdf-meta-row dt {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.route-pdf .pdf-meta-inline .pdf-meta-row dd {
+  font-size: 13px;
+}
+
+.route-pdf .pdf-detail-columns {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 12mm;
+  row-gap: 10px;
+  align-items: start;
+}
+
+.route-pdf .pdf-panel {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  min-height: 0;
+}
+
+.route-pdf .pdf-panel-empty {
+  visibility: hidden;
+}
+
+.route-pdf .pdf-panel .pdf-subhead {
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.route-pdf .pdf-panel p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #44403c;
+  margin: 0;
+}
+
+.route-pdf .pdf-detail-columns .pdf-meta-row {
+  font-size: 12px;
+}
+
+.route-pdf .pdf-detail-columns .pdf-bullets,
+.route-pdf .pdf-detail-columns .pdf-link-list {
+  font-size: 12px;
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.route-pdf .pdf-meta {
+  margin: 0;
+}
+
+.route-pdf .pdf-meta-row {
+  display: grid;
+  grid-template-columns: 24mm 1fr;
+  gap: 6px;
+  font-size: 13px;
+  padding: 2px 0;
+}
+
+.route-pdf .pdf-meta-row dt {
+  color: #78716c;
+}
+
+.route-pdf .pdf-meta-row dd {
+  margin: 0;
+  color: #44403c;
+}
+
+.route-pdf .pdf-bullets,
+.route-pdf .pdf-link-list {
+  margin: 0;
+  padding-left: 14px;
+  font-size: 13px;
+  color: #44403c;
+  line-height: 1.5;
+}
+
+.route-pdf .pdf-link-list a {
+  color: #44403c;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.route-pdf .pdf-bullets li + li,
+.route-pdf .pdf-link-list li + li {
+  margin-top: 3px;
+}
+
+.route-pdf .pdf-about-p + .pdf-about-p {
+  margin-top: 6px;
+}
+
+.route-pdf .pdf-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.route-pdf .pdf-story-card {
+  border: 1px solid #e7e5e4;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fafaf9;
+}
+
+.route-pdf .pdf-story-card h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #d97706;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.route-pdf .pdf-story-step {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.route-pdf .pdf-story-label {
+  font-weight: 700;
+}
+
+.route-pdf .pdf-story-card p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #44403c;
 }
 
 @media print {
   .route-pdf {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    background: #fff;
   }
+
+  .route-pdf .pdf-preview-stage {
+    padding: 0;
+  }
+
+  .route-pdf .pdf-pages {
+    gap: 0;
+  }
+
   .route-pdf .pdf-page {
+    width: 297mm;
     height: 210mm;
-    min-height: 210mm;
-    max-height: 210mm;
-    overflow: hidden;
+    box-shadow: none;
+    border: none;
     page-break-after: always;
-    page-break-inside: avoid;
-    padding: 6mm 10mm 8mm;
-    font-size: 14px; /* PDF 저장 시 전체 텍스트 2px 확대 (12→14) */
+    break-after: page;
   }
+
   .route-pdf .pdf-pages .pdf-page:last-child {
     page-break-after: auto;
+    break-after: auto;
   }
-  /* 본문·목록·프로젝트 등 모든 텍스트 14px 통일 (print:text-[10px] 등 컴포넌트 지정 오버라이드) */
-  .route-pdf .pdf-page p,
-  .route-pdf .pdf-page li,
-  .route-pdf .pdf-page dd,
-  .route-pdf .pdf-page dt,
-  .route-pdf .pdf-page span {
-    font-size: 14px !important;
-  }
-  /* 프로젝트 메타/본문 감싸는 div (MetaRow 등)도 14px */
-  .route-pdf .pdf-page .pdf-page-inner div {
-    font-size: 14px !important;
-  }
-  /* 프로젝트 상세 소제목(상황·원인·행동·결과 라벨)만 12px */
-  .route-pdf .pdf-page .pdf-page-inner p.font-medium {
-    font-size: 12px !important;
-  }
-  .route-pdf .pdf-page h1 { font-size: 1.35rem; }
-  .route-pdf .pdf-page h2 { font-size: 1.2rem; }
-  .route-pdf .pdf-page h3 { font-size: 1.1rem; }
-  .route-pdf .pdf-page h4 { font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: #78716c; }
-  /* 루트(1페이지) Frontend Developer 타이틀: PDF 저장 시에만 4px 확대 (웹·미리보기는 page.tsx 기존 크기 유지) */
-  .route-pdf .pdf-pages .pdf-page:first-child h1 {
-    font-size: 1.7rem;
-  }
-  .route-pdf .pdf-page img {
-    max-height: 56mm;
-    object-fit: contain;
-  }
-  .route-pdf .pdf-page section {
-    padding: 0.4rem 0;
-    margin-bottom: 0.5rem;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-  }
-  .route-pdf .pdf-page section:last-child { margin-bottom: 0; }
-  .route-pdf .pdf-page .border-b { border-bottom: none; }
-  .route-pdf .pdf-page-inner {
-    max-width: 250mm; /* 가로형 A4에서 넓게 사용 */
-  }
-  /* PDF에서 라벨/헤더 텍스트도 2px 확대 (14px 기준) */
-  .route-pdf .pdf-page .pdf-label {
-    font-size: 0.75rem;
-  }
-  .route-pdf .pdf-page .pdf-page-header {
-    font-size: 0.7rem;
-  }
-  /* 프로젝트 메타/개발환경 라벨(프레임워크, 라이브러리 등) 한 줄로, 행 간격 통일 */
-  .route-pdf .pdf-page dt {
-    white-space: nowrap;
-  }
-  .route-pdf .pdf-page .pdf-block .grid {
-    align-items: baseline;
-    min-height: 1.5em;
-  }
-  /* Stacks 뱃지: 3줄로 줄바꿈 (너비 제한) */
-  .route-pdf .pdf-page section .flex-wrap.gap-2 {
-    max-width: 12em;
-    justify-content: flex-start;
-  }
-  /* 핵심 역량 페이지: 간격 축소해 하단 잘림 방지 */
-  .route-pdf .pdf-strengths section {
-    padding-top: 0;
-    padding-bottom: 0.2rem;
-  }
-  .route-pdf .pdf-strengths h2 {
-    margin-bottom: 0.35rem;
-  }
-  .route-pdf .pdf-strengths .space-y-6 > * + * {
-    margin-top: 0.4rem;
-  }
-  .route-pdf .pdf-strengths .rounded-lg {
-    padding: 0.35rem 0.5rem;
-  }
-  .route-pdf .pdf-strengths .space-y-1.5 > * + * {
-    margin-top: 0.15rem;
-  }
-  .route-pdf .pdf-strengths h3 {
-    margin-bottom: 0.35rem;
-  }
-  .route-pdf .pdf-strengths .mt-3 {
-    margin-top: 0.35rem;
-  }
-  .route-pdf .pdf-strengths .mb-1 {
-    margin-bottom: 0.15rem;
-  }
+
   @page {
     size: A4 landscape;
     margin: 0;

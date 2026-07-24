@@ -13,7 +13,7 @@ export default function IntroProfile() {
   return (
     <section id="profile" className="pt-8 pb-12 border-b border-stone-200 dark:border-stone-800">
       <div className="flex flex-col items-center">
-        <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 flex items-center justify-center">
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 flex items-center justify-center bg-transparent">
           {/* 테두리만 있는 사각형 - z축 뒤, 사진과 동일 높이·약간 좌측 */}
           <div
             className="absolute w-[85%] h-[85%] border-2 border-stone-400 bg-transparent pointer-events-none rotate-45 z-0 dark:border-stone-500"
@@ -21,21 +21,22 @@ export default function IntroProfile() {
           />
           {/* 사진: 다이아몬드(45도 회전한 사각형), 앞에 배치 */}
           <div
-            className="absolute w-[85%] h-[85%] left-[7.5%] top-[7.5%] overflow-hidden rotate-45 z-10"
+            className="absolute w-[85%] h-[85%] left-[7.5%] top-[7.5%] overflow-hidden rotate-45 z-10 bg-transparent"
             style={{ aspectRatio: "1" }}
           >
             <div
-              className="w-full h-full -rotate-45 scale-150"
+              className="w-full h-full -rotate-45 scale-150 bg-transparent"
               style={{ aspectRatio: "1" }}
             >
               <Image
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-transparent"
                 src={MyImage}
                 alt={INTRO_NAME}
                 width={320}
                 height={320}
                 placeholder="blur"
                 priority
+                style={{ background: "transparent" }}
               />
             </div>
           </div>

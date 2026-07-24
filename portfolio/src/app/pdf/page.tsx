@@ -1,132 +1,140 @@
 "use client";
 
-import {
-  HOME_TAGLINE,
-  HOME_NAME,
-  HOME_LINKS,
-} from "@/app/constants";
-import {
-  IntroProfile,
-  IntroEducation,
-  IntroExperience,
-  IntroStacks,
-  IntroStrengths,
-} from "@/app/introduction/components";
 import { WORK_PROJECTS, PERSONAL_PROJECTS } from "@/app/project/constants";
-import PdfProjectPages from "./components/PdfProjectPages";
+import PdfCover from "./components/PdfCover";
+import PdfToc from "./components/PdfToc";
+import PdfIntro from "./components/PdfIntro";
+import PdfProjectList from "./components/PdfProjectList";
+import PdfProjectDetail, {
+  shouldSplitProject,
+} from "./components/PdfProjectDetail";
 
-/** 2페이지로 나누는 프로젝트 (내용이 긴 경우) */
-const TWO_PAGE_PROJECT_IDS = [
-  "work-brand-renewal",   // 브랜드사이트 리뉴얼
-  "work-customer-portal", // 커스터머포탈
-  "work-site-maintenance",// 유지보수
-  "quizgen",              // QuizGen
-];
+const ORDERED_PROJECTS = [...WORK_PROJECTS, ...PERSONAL_PROJECTS];
 
-/** PDF 한 페이지 = 가로형 A4 한 장. 웹과 동일한 stone/amber 컨셉 + 공통 토큰 */
-const pageClass =
-  "pdf-page box-border flex flex-col min-h-[210mm]";
+function buildPagePlan() {
+  const pages: Array<
+    | { type: "cover" }
+    | { type: "toc" }
+    | { type: "intro" }
+    | { type: "project-list-work" }
+    | { type: "project-list-personal" }
+    | { type: "project"; projectId: string; storyOnly?: boolean }
+  > = [
+    { type: "cover" },
+    { type: "toc" },
+    { type: "intro" },
+    { type: "project-list-work" },
+    { type: "project-list-personal" },
+  ];
 
-/** 1페이지: 홈 화면 */
-function PdfPage1Home() {
-  return (
-    <section
-      className={`${pageClass} items-center justify-center px-6 py-8 print:flex print:flex-col print:justify-center`}
-    >
-      <div className="pdf-page-inner w-full flex flex-col items-center text-center">
-        <p className="pdf-label">Portfolio</p>
-        <h1 className="font-LilitaOne text-3xl sm:text-4xl text-stone-800 tracking-tight mt-2 text-center print:text-2xl">
-          Frontend
-          <br />
-          <span className="text-amber-600">Developer</span>
-        </h1>
-        <p className="text-stone-600 text-xs sm:text-sm max-w-md mx-auto mt-2 text-center print:text-[11px]">
-          {HOME_TAGLINE}
-        </p>
-        <div className="h-px w-12 mx-auto bg-stone-300 my-3" />
-        <p className="font-LilitaOne text-base sm:text-lg text-stone-700 tracking-widest print:text-sm">
-          {HOME_NAME}
-        </p>
-        <p className="text-xs text-stone-600 mt-1 print:text-[10px]">
-          {HOME_LINKS.map((l) => l.label).join(" · ")}
-        </p>
-      </div>
-    </section>
-  );
-}
+  for (const project of ORDERED_PROJECTS) {
+    pages.push({ type: "project", projectId: project.id });
+    if (shouldSplitProject(project)) {
+      pages.push({ type: "project", projectId: project.id, storyOnly: true });
+    }
+  }
 
-/** 2페이지: 소개 화면 (프로필 + 전화번호, 메일, 깃주소) */
-function PdfPage2Intro() {
-  return (
-    <section className={`${pageClass} px-4 py-6 print:py-4`}>
-      <div className="pdf-page-header">Portfolio</div>
-      <div className="pdf-page-inner flex-1 min-h-0 overflow-hidden px-0 w-full">
-        <p className="pdf-label mb-0.5">Introduction</p>
-        <h2 className="font-semibold text-stone-800 text-lg tracking-tight mb-3 print:text-base">
-          Profile
-        </h2>
-        <IntroProfile />
-      </div>
-    </section>
-  );
-}
-
-/** 3페이지: 교육, 경험, 스택 */
-function PdfPage3EduExpStack() {
-  return (
-    <section className={`${pageClass} px-4 py-6 print:py-4`}>
-      <div className="pdf-page-header">Portfolio</div>
-      <div className="pdf-page-inner flex-1 min-h-0 overflow-hidden px-0 w-full">
-        <IntroEducation />
-        <IntroExperience />
-        <IntroStacks />
-      </div>
-    </section>
-  );
-}
-
-/** 4페이지: 핵심역량 */
-function PdfPage4Strengths() {
-  return (
-    <section className={`${pageClass} px-4 py-6 print:py-4`}>
-      <div className="pdf-page-header">Portfolio</div>
-      <div className="pdf-page-inner flex-1 min-h-0 overflow-hidden px-0 w-full pdf-strengths">
-        <IntroStrengths />
-      </div>
-    </section>
-  );
+  return pages;
 }
 
 export default function PdfPage() {
-  const projects = [...WORK_PROJECTS, ...PERSONAL_PROJECTS];
+  const plan = buildPagePlan();
+  const totalPages = plan.length;
+
+  const introPage = plan.findIndex((p) => p.type === "intro") + 1;
+  const workListPage =
+    plan.findIndex((p) => p.type === "project-list-work") + 1;
+  const personalListPage =
+    plan.findIndex((p) => p.type === "project-list-personal") + 1;
+
+  const projectStartPage: Record<string, number> = {};
+  plan.forEach((p, i) => {
+    if (p.type === "project" && !p.storyOnly && !(p.projectId in projectStartPage)) {
+      projectStartPage[p.projectId] = i + 1;
+    }
+  });
 
   return (
-    <div className="min-h-screen">
-      <div className="print:hidden sticky top-0 z-[9999] bg-amber-500/95 text-stone-900 px-4 py-3 flex flex-wrap items-center justify-center gap-3 shadow-md">
-        <span className="text-sm font-medium">
-          인쇄 시 &quot;대상: PDF로 저장&quot;을 선택하면 포트폴리오 PDF를 저장할 수 있습니다.
+    <div className="min-h-screen bg-stone-200/80">
+      <div className="print:hidden sticky top-0 z-[9999] bg-stone-900 text-stone-50 px-4 py-3 flex flex-wrap items-center justify-center gap-3 shadow-md">
+        <span className="text-sm text-stone-200">
+          미리보기입니다. 인쇄 시 &quot;대상: PDF로 저장&quot; · 용지 가로(A4)를
+          선택하세요.
         </span>
         <button
           type="button"
           onClick={() => window.print()}
-          className="px-4 py-2 bg-stone-800 text-white text-sm font-medium rounded-lg hover:bg-stone-700 transition-colors"
+          className="px-4 py-2 bg-amber-500 text-stone-900 text-sm font-semibold rounded-md hover:bg-amber-400 transition-colors"
         >
           인쇄 / PDF로 저장
         </button>
       </div>
 
-      <div className="pdf-pages">
-        <PdfPage1Home />
-        <PdfPage2Intro />
-        <PdfPage3EduExpStack />
-        <PdfPage4Strengths />
-        {projects.map((project) => (
-          <PdfProjectPages
-            key={project.id}
-            project={project}
-            twoPageProjectIds={TWO_PAGE_PROJECT_IDS}
-          />
-        ))}
+      <div className="pdf-preview-stage print:p-0 print:bg-transparent">
+        <div className="pdf-pages">
+          {plan.map((item, index) => {
+            const pageNumber = index + 1;
+            const key = `${item.type}-${pageNumber}`;
+
+            if (item.type === "cover") {
+              return <PdfCover key={key} />;
+            }
+            if (item.type === "toc") {
+              return (
+                <PdfToc
+                  key={key}
+                  pageNumber={pageNumber}
+                  totalPages={totalPages}
+                  introPage={introPage}
+                  workListPage={workListPage}
+                  personalListPage={personalListPage}
+                  projectStartPage={projectStartPage}
+                />
+              );
+            }
+            if (item.type === "intro") {
+              return (
+                <PdfIntro
+                  key={key}
+                  pageNumber={pageNumber}
+                  totalPages={totalPages}
+                />
+              );
+            }
+            if (item.type === "project-list-work") {
+              return (
+                <PdfProjectList
+                  key={key}
+                  variant="work"
+                  pageNumber={pageNumber}
+                  totalPages={totalPages}
+                />
+              );
+            }
+            if (item.type === "project-list-personal") {
+              return (
+                <PdfProjectList
+                  key={key}
+                  variant="personal"
+                  pageNumber={pageNumber}
+                  totalPages={totalPages}
+                />
+              );
+            }
+
+            const project = ORDERED_PROJECTS.find((p) => p.id === item.projectId);
+            if (!project) return null;
+            return (
+              <PdfProjectDetail
+                key={key}
+                project={project}
+                pageNumber={pageNumber}
+                totalPages={totalPages}
+                storyOnly={Boolean(item.storyOnly)}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
