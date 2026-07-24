@@ -21,6 +21,7 @@ export interface StudyPost {
 
 /** Study/YYYY/*.md 스터디 글 목록 (날짜 최신순). categoryId: frontend | backend | infra | seo | security | certificate | hobby */
 export const STUDY_POSTS: StudyPost[] = [
+  { id: "2026-07-24", categoryId: "frontend", title: "Recharts로 포트폴리오 Insights 차트 만들기", date: "2026-07-24", slug: "2026-07-24" },
   { id: "2026-07-18", categoryId: "certificate", title: "[정처기 실기] 핵심 개념 복습", date: "2026-07-18", slug: "2026-07-18" },
   { id: "2026-07-13", categoryId: "certificate", title: "[정처기 실기] 서브넷·브로드캐스트", date: "2026-07-13", slug: "2026-07-13" },
   { id: "2026-07-12", categoryId: "certificate", title: "[정처기 실기] 페이지 교체 (LRU)", date: "2026-07-12", slug: "2026-07-12" },

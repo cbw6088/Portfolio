@@ -36,7 +36,6 @@ export default function IntroProfile() {
                 height={320}
                 placeholder="blur"
                 priority
-                style={{ background: "transparent" }}
               />
             </div>
           </div>

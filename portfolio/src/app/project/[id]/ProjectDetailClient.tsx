@@ -31,7 +31,7 @@ export default function ProjectDetailClient({
         <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn dark:bg-stone-950 dark:text-stone-100">
           <HomeBackground showGlow={false} />
           <main className="relative flex-1 min-h-0 overflow-y-auto">
-            <div className="max-w-2xl mx-auto px-6 pt-16 pb-8 sm:py-12">
+            <div className="max-w-2xl mx-auto px-6 pt-20 pb-8 sm:py-12">
               <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
                 Project
               </p>
@@ -61,7 +61,7 @@ export default function ProjectDetailClient({
       <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn dark:bg-stone-950 dark:text-stone-100">
         <HomeBackground showGlow={false} />
         <main className="relative flex-1 min-h-0 overflow-y-auto">
-          <div className="max-w-2xl mx-auto px-6 pt-16 pb-8 sm:py-12">
+          <div className="max-w-2xl mx-auto px-6 pt-20 pb-8 sm:py-12">
             <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
               Project
             </p>

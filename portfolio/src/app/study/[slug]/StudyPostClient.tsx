@@ -32,7 +32,7 @@ export default function StudyPostClient({
       <div className="fixed inset-0 flex flex-col">
         <HomeBackground showGlow={false} />
         <main className="relative flex-1 overflow-y-auto">
-          <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
+          <div className="max-w-2xl mx-auto px-6 pt-20 pb-8 sm:py-12">
             <Link
               href="/study"
               className="text-sm text-amber-600 hover:text-amber-700 font-medium"
