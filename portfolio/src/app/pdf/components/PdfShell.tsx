@@ -1,5 +1,7 @@
 "use client";
 
+import PdfPageFrame from "./PdfPageFrame";
+
 interface PdfShellProps {
   children: React.ReactNode;
   /** 표지 등 헤더 없는 페이지 */
@@ -18,22 +20,24 @@ export default function PdfShell({
   totalPages,
 }: PdfShellProps) {
   return (
-    <section className="pdf-page">
-      {!bare && (
-        <header className="pdf-chrome">
-          <span className="pdf-chrome-brand">CHOI BYUNGWOO · Portfolio</span>
-          {section ? <span className="pdf-chrome-section">{section}</span> : null}
-        </header>
-      )}
-      <div className={`pdf-body ${bare ? "pdf-body-bare" : ""}`}>{children}</div>
-      {!bare && pageNumber != null && (
-        <footer className="pdf-chrome pdf-chrome-footer">
-          <span>
-            {pageNumber}
-            {totalPages != null ? ` / ${totalPages}` : ""}
-          </span>
-        </footer>
-      )}
-    </section>
+    <PdfPageFrame>
+      <section className="pdf-page">
+        {!bare && (
+          <header className="pdf-chrome">
+            <span className="pdf-chrome-brand">CHOI BYUNGWOO · Portfolio</span>
+            {section ? <span className="pdf-chrome-section">{section}</span> : null}
+          </header>
+        )}
+        <div className={`pdf-body ${bare ? "pdf-body-bare" : ""}`}>{children}</div>
+        {!bare && pageNumber != null && (
+          <footer className="pdf-chrome pdf-chrome-footer">
+            <span>
+              {pageNumber}
+              {totalPages != null ? ` / ${totalPages}` : ""}
+            </span>
+          </footer>
+        )}
+      </section>
+    </PdfPageFrame>
   );
 }

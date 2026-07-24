@@ -51,14 +51,25 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 28px;
+  width: min(297mm, calc(100vw - 32px));
+}
+
+/* 미리보기용 슬롯: 화면 너비에 맞추고, 안쪽 A4는 scale로 축소 */
+.route-pdf .pdf-page-frame {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.route-pdf .pdf-page-scale {
+  transform-origin: top center;
+  flex-shrink: 0;
 }
 
 .route-pdf .pdf-page {
-  width: min(297mm, calc(100vw - 32px));
-  aspect-ratio: 297 / 210;
-  height: auto;
-  max-width: 100%;
+  width: 297mm;
+  height: 210mm;
   box-sizing: border-box;
   background: #fff;
   color: #292524;
@@ -770,6 +781,17 @@ body {
 
   .route-pdf .pdf-pages {
     gap: 0;
+    width: 297mm;
+  }
+
+  .route-pdf .pdf-page-frame {
+    width: 297mm;
+    height: 210mm !important;
+    overflow: visible;
+  }
+
+  .route-pdf .pdf-page-scale {
+    transform: none !important;
   }
 
   .route-pdf .pdf-page {

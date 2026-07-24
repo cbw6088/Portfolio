@@ -57,17 +57,27 @@ export default function PdfPage() {
   return (
     <div className="min-h-screen bg-stone-200/80">
       <div className="print:hidden sticky top-0 z-[9999] bg-stone-900 text-stone-50 px-4 py-3 flex flex-wrap items-center justify-center gap-3 shadow-md">
-        <span className="text-sm text-stone-200">
+        <span className="hidden md:inline text-sm text-stone-200">
           미리보기입니다. 인쇄 시 &quot;대상: PDF로 저장&quot; · 용지 가로(A4)를
           선택하세요.
+        </span>
+        <span className="md:hidden text-sm text-stone-200">
+          미리보기입니다. PDF 파일을 다운로드할 수 있습니다.
         </span>
         <button
           type="button"
           onClick={() => window.print()}
-          className="px-4 py-2 bg-amber-500 text-stone-900 text-sm font-semibold rounded-md hover:bg-amber-400 transition-colors"
+          className="hidden md:inline-flex px-4 py-2 bg-amber-500 text-stone-900 text-sm font-semibold rounded-md hover:bg-amber-400 transition-colors"
         >
           인쇄 / PDF로 저장
         </button>
+        <a
+          href="/pdf/portfolio.pdf"
+          download="portfolio.pdf"
+          className="md:hidden inline-flex px-4 py-2 bg-amber-500 text-stone-900 text-sm font-semibold rounded-md hover:bg-amber-400 transition-colors"
+        >
+          PDF 다운로드
+        </a>
       </div>
 
       <div className="pdf-preview-stage print:p-0 print:bg-transparent">
