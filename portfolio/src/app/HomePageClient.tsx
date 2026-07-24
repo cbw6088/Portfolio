@@ -10,6 +10,7 @@ import {
   HomeCursor,
   HomeHero,
   HomeContact,
+  AmbientDots,
 } from "./components";
 import { HOME_LINKS, HOME_TAGLINE, HOME_NAME } from "./constants";
 
@@ -35,7 +36,8 @@ export default function HomePageClient() {
         <HomeBackground />
 
         <main className="relative flex-1 flex flex-col items-center justify-center min-h-0 overflow-hidden px-6 pt-20 pb-6 sm:py-8">
-          <div className="max-w-2xl w-full text-center space-y-3 sm:space-y-5 overflow-hidden">
+          <AmbientDots />
+          <div className="relative z-10 max-w-2xl w-full text-center space-y-3 sm:space-y-5 overflow-hidden">
             <HomeHero mounted={mounted} tagline={HOME_TAGLINE} />
             <HomeContact name={HOME_NAME} links={HOME_LINKS} />
           </div>

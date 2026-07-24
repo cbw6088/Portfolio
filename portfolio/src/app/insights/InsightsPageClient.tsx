@@ -6,6 +6,7 @@ import { showBar } from "@/feature/bar/TopBarSlice";
 import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
 import HomeBackground from "@/app/components/HomeBackground";
+import AmbientDots from "@/app/components/AmbientDots";
 import TitleGlow from "@/app/components/TitleGlow";
 import {
   ProjectTypeChart,
@@ -43,54 +44,57 @@ export default function InsightsPageClient() {
       <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn dark:bg-stone-950 dark:text-stone-100">
         <HomeBackground showGlow={false} />
         <main className="relative flex-1 min-h-0 overflow-y-auto">
-          <div className="max-w-2xl mx-auto px-6 pt-20 pb-8 sm:py-12">
-            <header className="mb-8">
-              <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
-                Insights
-              </p>
-              <h1 className="relative inline-block font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-3 dark:text-stone-100">
-                <TitleGlow />
-                Activity
-              </h1>
-              {summary.narrative ? (
-                <p className="text-sm leading-relaxed text-stone-600 break-keep text-pretty dark:text-stone-300">
-                  {summary.narrative}
+          <div className="relative">
+            <AmbientDots />
+            <div className="relative z-10 max-w-2xl mx-auto px-6 pt-20 pb-8 sm:py-12">
+              <header className="mb-8">
+                <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
+                  Insights
                 </p>
-              ) : null}
-            </header>
+                <h1 className="relative inline-block font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-3 dark:text-stone-100">
+                  <TitleGlow />
+                  Activity
+                </h1>
+                {summary.narrative ? (
+                  <p className="text-sm leading-relaxed text-stone-600 break-keep text-pretty dark:text-stone-300">
+                    {summary.narrative}
+                  </p>
+                ) : null}
+              </header>
 
-            <section
-              aria-label="핵심 지표"
-              className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
-            >
-              {kpis.map((kpi) => (
-                <div
-                  key={kpi.label}
-                  className="rounded-lg border border-stone-200 bg-white/60 px-3 py-3 dark:border-stone-700 dark:bg-stone-900/60"
-                >
-                  <p className="text-[11px] tracking-wide text-stone-500 dark:text-stone-400">
-                    {kpi.label}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold text-stone-800 dark:text-stone-100">
-                    {kpi.value}
-                  </p>
+              <section
+                aria-label="핵심 지표"
+                className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
+              >
+                {kpis.map((kpi) => (
+                  <div
+                    key={kpi.label}
+                    className="rounded-lg border border-stone-200 bg-white/60 px-3 py-3 dark:border-stone-700 dark:bg-stone-900/60"
+                  >
+                    <p className="text-[11px] tracking-wide text-stone-500 dark:text-stone-400">
+                      {kpi.label}
+                    </p>
+                    <p className="mt-1 text-lg font-semibold text-stone-800 dark:text-stone-100">
+                      {kpi.value}
+                    </p>
+                  </div>
+                ))}
+              </section>
+
+              <div className="space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <ProjectTypeChart data={projectTypes} />
+                  <TechStackChart data={techStacks} />
                 </div>
-              ))}
-            </section>
-
-            <div className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <ProjectTypeChart data={projectTypes} />
-                <TechStackChart data={techStacks} />
+                <StudyMonthlyChart />
+                <StudyCategoryChart data={categories} />
               </div>
-              <StudyMonthlyChart />
-              <StudyCategoryChart data={categories} />
-            </div>
 
-            <p className="mt-8 text-xs text-stone-500 dark:text-stone-500">
-              데이터는 포트폴리오에 등록된 스터디·프로젝트 기록을 기준으로
-              집계됩니다.
-            </p>
+              <p className="mt-8 text-xs text-stone-500 dark:text-stone-500">
+                데이터는 포트폴리오에 등록된 스터디·프로젝트 기록을 기준으로
+                집계됩니다.
+              </p>
+            </div>
           </div>
         </main>
 

@@ -44,26 +44,6 @@ export default function HomeBackground({ showGlow = true }: HomeBackgroundProps)
           />
         </>
       )}
-      <div
-        className="fixed top-[25%] left-[15%] w-2 h-2 rounded-full bg-amber-400/45 pointer-events-none animate-float dark:bg-amber-400/55"
-        aria-hidden
-        style={{ animationDelay: "0s" }}
-      />
-      <div
-        className="fixed top-[18%] right-[28%] w-1 h-1 rounded-full bg-amber-500/35 pointer-events-none animate-float dark:bg-amber-500/50"
-        aria-hidden
-        style={{ animationDelay: "0.8s" }}
-      />
-      <div
-        className="fixed top-[60%] right-[20%] w-1.5 h-1.5 rounded-full bg-amber-500/40 pointer-events-none animate-float dark:bg-amber-500/55"
-        aria-hidden
-        style={{ animationDelay: "1.5s" }}
-      />
-      <div
-        className="fixed top-[72%] left-[28%] w-2.5 h-2.5 rounded-full bg-amber-400/30 pointer-events-none animate-float dark:bg-amber-400/45"
-        aria-hidden
-        style={{ animationDelay: "2.2s" }}
-      />
     </>
   );
 }
