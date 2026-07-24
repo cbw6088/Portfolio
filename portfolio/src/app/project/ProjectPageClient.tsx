@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { showBar } from "@/feature/bar/TopBarSlice";
 import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
+import HomeBackground from "@/app/components/HomeBackground";
 import { ProjectCard } from "./components";
 import { PERSONAL_PROJECTS, WORK_PROJECTS } from "./constants";
 
@@ -48,17 +49,26 @@ export default function ProjectPageClient() {
   return (
     <div className="h-screen max-h-[100dvh] overflow-hidden">
       <div className="fixed inset-0 w-full bg-stone-50 text-stone-800 flex flex-col animate-fadeIn dark:bg-stone-950 dark:text-stone-100">
-        <main className="flex-1 min-h-0 overflow-y-auto">
+        <HomeBackground showGlow={false} />
+        <main className="relative flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-2xl mx-auto px-6 pt-16 pb-8 sm:py-12">
             <p className="text-sm tracking-[0.2em] uppercase text-stone-500 mb-1">
               Project
             </p>
-            <h1 className="font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-6 dark:text-stone-100">
+            <h1 className="relative inline-block font-semibold text-2xl sm:text-3xl text-stone-800 tracking-tight mb-4 dark:text-stone-100">
+              <span
+                className="absolute inset-[-40%_-30%] pointer-events-none -z-10 dark:opacity-90"
+                aria-hidden
+                style={{
+                  background:
+                    "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(245, 158, 11, 0.35) 0%, rgba(245, 158, 11, 0.12) 45%, transparent 70%)",
+                }}
+              />
               Works
             </h1>
 
             <div
-              className="relative inline-flex items-center rounded-full border border-stone-200 bg-stone-100 p-1 text-xs sm:text-sm mb-6 dark:border-stone-700 dark:bg-stone-900"
+              className="relative flex w-fit items-center rounded-full border border-stone-200 bg-stone-100 p-1 text-xs sm:text-sm mb-6 dark:border-stone-700 dark:bg-stone-900"
               role="tablist"
               aria-label="프로젝트 유형"
             >

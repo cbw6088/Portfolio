@@ -27,10 +27,10 @@ export default function HomeHero({ mounted, tagline }: HomeHeroProps) {
       >
         Frontend
         <br />
-        <span className="relative isolate inline-block text-amber-600 animate-softPulse">
+        <span className="relative isolate inline-block text-amber-500 animate-softPulse">
           Developer
           <span
-            className="absolute bottom-0 left-0 -z-10 w-full h-0.5 bg-amber-500/60 rounded-full origin-left opacity-0 animate-lineGrow"
+            className="absolute bottom-0 left-0 -z-10 w-full h-0.5 bg-amber-500/80 rounded-full origin-left opacity-0 animate-lineGrow"
             style={{ animationDelay: "800ms", animationFillMode: "forwards" }}
           />
         </span>

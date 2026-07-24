@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import SideButtonTest from "@/components/button/SideButtonTest";
 import TopBar from "@/components/bar/TopBar";
+import HomeBackground from "@/app/components/HomeBackground";
 import { useDispatch } from "react-redux";
 import { showBar } from "@/feature/bar/TopBarSlice";
 import StudyMarkdown from "../components/StudyMarkdown";
@@ -29,7 +30,8 @@ export default function StudyPostClient({
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 dark:bg-stone-950 dark:text-stone-100">
       <div className="fixed inset-0 flex flex-col">
-        <main className="flex-1 overflow-y-auto">
+        <HomeBackground showGlow={false} />
+        <main className="relative flex-1 overflow-y-auto">
           <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
             <Link
               href="/study"
